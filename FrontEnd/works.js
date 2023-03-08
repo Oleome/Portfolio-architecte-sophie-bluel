@@ -21,6 +21,13 @@ function genererGallerie(works) {
 
 genererGallerie(works);
 
+const boutonTous = document.querySelector(".tous");
+
+boutonTous.addEventListener("click", function () {
+    document.querySelector(".gallery").innerHTML = '';
+    genererGallerie(works);
+});
+
 const boutonObjets = document.querySelector(".objets");
 
 boutonObjets.addEventListener("click", function () {
