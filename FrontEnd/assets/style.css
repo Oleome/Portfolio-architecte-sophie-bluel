@@ -210,21 +210,31 @@ footer nav ul {
 
 /*login*/
 
-.main {
+.main, .formulaire-login {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	gap: 30px;
 }
 
-.formulaire-login {
+.div-email, .div-password {
 	display: flex;
 	flex-direction: column;
+	width: 379px;
 }
 
-#champ-email, #champ-password {
-
+.div-email input, .div-password input {
+	height: 40px;
 }
+
+.login-footer {
+	position: fixed;
+	bottom: 0%;
+	right: 0%;
+}
+
+
 
 
 

@@ -26,15 +26,19 @@
     <main class="main">
         <h2>Login</h2>
         <form class="formulaire-login" action="" method="post">
-            <label for="champ-email">E-mail</label>
-            <input type="email" name="email" id="champ-email">
-            <label for="champ-password">Mot de passe</label>
-            <input type="password" name="password" id="champ-password">
+            <div class="div-email">  
+                <label for="champ-email">E-mail</label>
+                <input type="email" name="email" id="champ-email">
+            </div>
+            <div class="div-password">
+                <label for="champ-password">Mot de passe</label>
+                <input type="password" name="password" id="champ-password">
+            </div>
             <button type="submit">Se connecter</button>
             <a href="#">Mots de passe oublié</a>
         </form>
     </main>
-    <footer>
+    <footer class="login-footer">
         <nav>
             <ul>
                 <li>Mentions Légales</li>
