@@ -131,6 +131,22 @@ li:hover {
 	justify-content: center;
 }
 
+.filtres_gallery button {
+	border-radius: 60px;
+	font-size: 16px;
+	padding: 9px 20px;
+	margin: 50px 5px;
+	color: #1D6154;
+	background-color: #FFF;
+	border-color: #1D6154;
+}
+
+.filtres_gallery button:hover {
+	background-color: #1D6154;
+	color: #FFF;
+	cursor: pointer;
+}
+
 .gallery {
 	width: 100%;
 	display: grid;
