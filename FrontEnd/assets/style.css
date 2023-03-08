@@ -210,6 +210,10 @@ footer nav ul {
 
 /*login*/
 
+.header-login {
+	margin-bottom: 120px;
+}
+
 .main, .formulaire-login {
 	display: flex;
 	justify-content: center;
@@ -230,8 +234,8 @@ footer nav ul {
 
 .login-footer {
 	position: fixed;
-	bottom: 0%;
-	right: 0%;
+	bottom: 1%;
+	right: 7%;
 }
 
 
