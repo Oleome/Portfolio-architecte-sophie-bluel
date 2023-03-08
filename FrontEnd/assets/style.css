@@ -58,6 +58,11 @@ header {
 	justify-content: space-between;
 	margin: 50px 0
 }
+
+header a {
+	text-decoration: none;
+}
+
 section {
 	margin: 50px 0
 }
@@ -95,7 +100,7 @@ nav li {
 	font-size: 1.2em;
 }
 
-li:hover {
+li:hover, header a:hover {
 	color: #B1663C;
 }
 #introduction {
@@ -229,9 +234,16 @@ footer nav ul {
 }
 
 .div-email input, .div-password input {
+<<<<<<< HEAD
 	height: 40px;
 	box-shadow: 0px 2px 5px rgba(164, 163, 163, 0.2);
 	border-color: #FFF;
+=======
+	font-size: 1.2em;
+	height: 50px;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+>>>>>>> master
 }
 
 .login-footer {
@@ -240,6 +252,13 @@ footer nav ul {
 	right: 7%;
 }
 
+.se-connecter {
+	padding: 10px 38px;
+}
+
+.formulaire-login a {
+	color: black;
+}
 
 
 
