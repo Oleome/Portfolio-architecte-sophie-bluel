@@ -230,6 +230,8 @@ footer nav ul {
 
 .div-email input, .div-password input {
 	height: 40px;
+	box-shadow: 0px 2px 5px rgba(164, 163, 163, 0.2);
+	border-color: #FFF;
 }
 
 .login-footer {
