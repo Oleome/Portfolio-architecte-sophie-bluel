@@ -208,3 +208,24 @@ footer nav ul {
 	margin: 2em
 }
 
+/*login*/
+
+.main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.formulaire-login {
+	display: flex;
+	flex-direction: column;
+}
+
+#champ-email, #champ-password {
+
+}
+
+
+
+
