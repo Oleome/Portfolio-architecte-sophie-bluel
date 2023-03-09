@@ -27,14 +27,16 @@
         <form class="formulaire-login" action="#" method="post">
             <div class="div-email">  
                 <label for="champ-email">E-mail</label>
-                <input type="email" name="email" id="champ-email">
+                <input type="email" name="email" id="champ-email" required>
             </div>
             <div class="div-password">
                 <label for="champ-password">Mot de passe</label>
-                <input type="password" name="password" id="champ-password">
+                <input type="password" name="password" id="champ-password" required>
             </div>
-            <input class="se-connecter" type="submit" value="Se connecter">
-            <a href="#">Mots de passe oublié</a>
+            <div class="liens">
+                <input class="se-connecter" type="submit" value="Se connecter">
+                <a href="#">Mots de passe oublié</a>
+            </div>
         </form>
     </main>
     <footer class="login-footer">
