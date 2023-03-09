@@ -3,8 +3,6 @@ import { ajoutListenerIdentifiants } from "./login.js";
 const response = await fetch("http://localhost:5678/api/works");
 const works = await response.json();
 
-ajoutListenerIdentifiants();
-
 function genererGallerie(works) {
     for(let i=0; i<works.length; i++){
 
@@ -61,3 +59,5 @@ boutonHotelRestaurant.addEventListener("click", function () {
     document.querySelector(".gallery").innerHTML = '';
     genererGallerie(hotelRestaurantFiltrer);
 });
+
+ajoutListenerIdentifiants();
