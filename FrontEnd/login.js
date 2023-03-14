@@ -14,7 +14,7 @@ function ajoutListenerIdentifiants() {
     responseLogin.then(response => {
         if (response.ok) {
             // Le formulaire est valide, on redirige vers la page d'accueil
-            window.location.href = "index.html";
+            window.location.href = "./index.html";
         } else {
             // Le formulaire est invalide, on affiche un message d'erreur
             const messageErreur = document.createElement("div");
