@@ -1,4 +1,4 @@
-export function ajoutListenerIdentifiants() {
+function ajoutListenerIdentifiants() {
     const formulaireLogin = document.querySelector(".formulaire-login");
     formulaireLogin.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -27,3 +27,5 @@ export function ajoutListenerIdentifiants() {
     });
 
 } 
+
+ajoutListenerIdentifiants() 
