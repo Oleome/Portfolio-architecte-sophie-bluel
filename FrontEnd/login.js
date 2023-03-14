@@ -10,6 +10,7 @@ function ajoutListenerIdentifiants() {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: chargeUtile
+<<<<<<< HEAD
     }); console.error(responseLogin)
     responseLogin.then(response => {
         if (response.ok) {
@@ -22,9 +23,10 @@ function ajoutListenerIdentifiants() {
             messageErreur.classList.add("message-erreur");
             formulaireLogin.appendChild(messageErreur);
         }
+=======
+>>>>>>> master
     });
     });
-
 } 
 
 ajoutListenerIdentifiants() 
