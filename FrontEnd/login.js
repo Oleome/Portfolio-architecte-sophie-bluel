@@ -16,7 +16,7 @@ function ajoutListenerIdentifiants() {
         const data = await request.json()
         if (request.ok) {
             // Le formulaire est valide, on redirige vers la page admin
-            window.location.href = "./contact.html";
+            window.location.href = "./index.html";
             localStorage.setItem("token", data.token)
         } else {
             // Le formulaire est invalide, on affiche un message d'erreur

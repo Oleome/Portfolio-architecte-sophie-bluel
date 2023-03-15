@@ -245,12 +245,6 @@ footer nav ul {
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-.login-footer {
-	position: fixed;
-	bottom: 1%;
-	right: 7%;
-}
-
 .se-connecter {
 	padding: 10px 38px;
 }
