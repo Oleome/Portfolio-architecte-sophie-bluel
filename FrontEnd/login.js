@@ -8,16 +8,15 @@ function ajoutListenerIdentifiants() {
         };
         const chargeUtile = JSON.stringify(login);
         const responseLogin = await fetch("http://localhost:5678/api/users/login", {
-
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: chargeUtile
         }) 
         .then(response => {
             if (response.ok) {
-                    // Le formulaire est valide, on redirige vers la page d'accueil
+                    // Le formulaire est valide, on redirige vers la page admin
                     window.location.href = "./contact.html";
-                    
+                    localStorage.setItem("bonjour","les gens")
             } else {
                     // Le formulaire est invalide, on affiche un message d'erreur
                     const messageErreur = document.createElement("div");
