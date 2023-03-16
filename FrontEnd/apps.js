@@ -2,11 +2,10 @@ let modal = null
 
 const openModal = function (e) {
     e.preventDefault()
-    const target = document.querySelector(e.target.getAttribute('href'))
-    target.style.display = null
-    target.removeAttribute('aria-hidden')
-    target.setAttribute('aria-modal', 'true')
-    modal = target
+    modal = document.querySelector(e.target.getAttribute('href'))
+    modal.style.display = null
+    modal.removeAttribute('aria-hidden')
+    modal.setAttribute('aria-modal', 'true')
     modal.addEventListener('click', closeModal)
     modal.querySelector('.js-modal-close').addEventListener('click', closeModal)
     modal.querySelector('.js-modal-stop').addEventListener('click', stopPropagation)
@@ -29,4 +28,10 @@ const stopPropagation = function(e) {
 
 document.querySelectorAll('.js-modal').forEach( a => {
     a.addEventListener('click', openModal)
+})
+
+window.addEventListener('keydown', function(e) {
+    if (e.key === "Escape" || e.key === "Esc") {
+        closeModal(e)
+    }
 })

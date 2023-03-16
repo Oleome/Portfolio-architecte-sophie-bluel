@@ -289,8 +289,10 @@ footer nav ul {
 	border-radius: 10px;	
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 }
 
-
+.modal-close {
+	background-color: #FFF;
+	border: none;
+	
+}
