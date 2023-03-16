@@ -24,7 +24,7 @@ const closeModal = function (e) {
 }
 
 const stopPropagation = function(e) {
-    e.stopPropagation
+    e.stopPropagation()
 }
 
 document.querySelectorAll('.js-modal').forEach( a => {
