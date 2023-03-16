@@ -286,16 +286,11 @@ footer nav ul {
 	max-width: calc(100% - 20px);
 	max-height: calc(100% - 80px);
 	padding: 20px;
-	border-radius: 10px;
-}
-
-.modal-gallery {
-	display: grid;
-	justify-content: center;
-}
-
-.se-connecter-modal {
+	border-radius: 10px;	
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	padding: 10px 49px;
+	align-items: center;
 }
+
+
