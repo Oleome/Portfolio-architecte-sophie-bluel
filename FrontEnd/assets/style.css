@@ -257,7 +257,7 @@ footer nav ul {
 	color: black;
 }
 
-.liens {
+.liens, .liens-modal{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -294,3 +294,8 @@ footer nav ul {
 	justify-content: center;
 }
 
+.se-connecter-modal {
+	display: flex;
+	justify-content: center;
+	padding: 10px 49px;
+}
