@@ -287,8 +287,7 @@ footer nav ul {
 	max-height: calc(100% - 80px);
 	padding: 20px;
 	border-radius: 10px;	
-	display: flex;
-	flex-direction: column;
+	display: grid;
 }
 
 .modal-close {
@@ -306,3 +305,14 @@ footer nav ul {
 .projet-modifier a {
 	margin: 0 0 30px 31px;
 }
+
+.modal-close {
+	justify-self: flex-end;
+	display: flex;
+	width: 12px;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
