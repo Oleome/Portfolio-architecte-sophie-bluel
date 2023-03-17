@@ -296,3 +296,13 @@ footer nav ul {
 	border: none;
 	
 }
+
+.projet-modifier {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.projet-modifier a {
+	margin: 0 0 30px 31px;
+}
