@@ -287,7 +287,6 @@ footer nav ul {
 	max-height: calc(100% - 80px);
 	padding: 32px 35px;
 	border-radius: 10px;	
-	display: grid;
 }
 
 .projet-modifier {
@@ -296,12 +295,8 @@ footer nav ul {
 	align-items: center;
 }
 
-.projet-modifier a {
-	margin: 0 0 30px 31px;
-}
-
 .modal-close {
-	justify-self: flex-end;
+	margin-left: auto;
 	display: flex;
 	width: 12px;
 	height: 12px;
@@ -311,10 +306,29 @@ footer nav ul {
 	border: none;
 }
 
-#se-connecter-modal input {
+#ajouter-photo-modal {
+	margin: 0 auto;
 	padding: 10px 49px 9px;
-	height: 0;
+	display: flex;
+	justify-content: center;
 }
+
+#ajouter-photo-modal input {
+	padding: 0;
+	margin: 0;
+}
+
+#title-modal {
+	text-align: center;
+	font-size: 1.63rem;
+	margin-top: 16px;
+}
+
+#supprimer {
+}
+
+
+
 
 
 
