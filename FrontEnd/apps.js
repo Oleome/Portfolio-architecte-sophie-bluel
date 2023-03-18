@@ -32,9 +32,17 @@ const stopPropagation = function(e) {
 const focusInModal = function (e) {
     e.preventDefault()
     let index = focusablesElements.findIndex(f => f === modal.querySelector(':focus'))
-    index++
+    if (e.shiftKey === true) {
+        index--
+    }
+    else {
+        index++
+    }   
     if (index >= focusablesElements.length) {
         index = 0
+    }
+    if (index < 0) {
+        index = focusablesElements.length -1
     }
     focusablesElements[index].focus()
 }
