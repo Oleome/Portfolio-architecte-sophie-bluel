@@ -1,8 +1,11 @@
 let modal = null
+const focusableSelector = 'button, a, input'
+let focusablesElements = []
 
 const openModal = function (e) {
     e.preventDefault()
     modal = document.querySelector(e.target.getAttribute('href'))
+    focusablesElements = Array.from(modal.querySelectorAll(focusableSelector))
     modal.style.display = null
     modal.removeAttribute('aria-hidden')
     modal.setAttribute('aria-modal', 'true')
@@ -26,6 +29,16 @@ const stopPropagation = function(e) {
     e.stopPropagation()
 }
 
+const focusInModal = function (e) {
+    e.preventDefault()
+    let index = focusablesElements.findIndex(f => f === modal.querySelector(':focus'))
+    index++
+    if (index >= focusablesElements.length) {
+        index = 0
+    }
+    focusablesElements[index].focus()
+}
+
 document.querySelectorAll('.js-modal').forEach( a => {
     a.addEventListener('click', openModal)
 })
@@ -34,4 +47,8 @@ window.addEventListener('keydown', function(e) {
     if (e.key === "Escape" || e.key === "Esc") {
         closeModal(e)
     }
+    if (e.key ==="Tab" && modal !== null) {
+        focusInModal(e)
+    }
 })
+
