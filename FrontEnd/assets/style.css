@@ -84,7 +84,6 @@ h1 > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
-;
 }
 
 h2{
@@ -343,7 +342,6 @@ footer nav ul {
 /*admin session*/
 
 .bandeau-admin {
-	position: fixed;
 	top: 0;
 	left: 0;
 	background-color: black;
@@ -353,8 +351,6 @@ footer nav ul {
 	justify-content: center;
 	align-items: center;
 }
-
-
 
 .bandeau-admin span {
 	font-size: 1rem;
