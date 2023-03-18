@@ -340,6 +340,28 @@ footer nav ul {
 	justify-content: center;
 }
 
+/*admin session*/
+
+.bandeau-admin {
+	background-color: black;
+	width: 100%;
+	height: 59px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bandeau-admin span {
+	font-size: 1rem;
+	color: #FFF;
+}
+
+.bandeau-admin button {
+	font-size: .88rem;
+	margin-left: 21px;
+	padding: 11px 23px;
+	border-radius: 60px;
+}
 
 
 
