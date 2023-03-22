@@ -1,5 +1,8 @@
+const response = await fetch("http://localhost:5678/api/works");
+const works = await response.json();
+
 let modal = null
-const focusableSelector = 'button, a, input'
+const focusableSelector = 'button, a, input, img'
 let focusablesElements = []
 let previouslyFocusedElement = null
 
@@ -63,4 +66,24 @@ window.addEventListener('keydown', function(e) {
         focusInModal(e)
     }
 })
+
+/**
+ * tentative crétion gallery dans modal
+ */
+for(let i=0; i<works.length; i++){
+    const project = works[i];
+    const galleryMiniature = document.querySelector('.miniature')
+    const figWorksModal = document.createElement("figure")
+    const imageWorksModal = document.createElement("img");
+    imageWorksModal.src = project.imageUrl;
+    const captionWorksModal = document.createElement("figcaption");
+    captionWorksModal.innerHTML = "éditer";
+    galleryMiniature.appendChild(figWorksModal);
+    figWorksModal.appendChild(imageWorksModal);
+    figWorksModal.appendChild(captionWorksModal);
+}
+
+
+
+
 

@@ -12,7 +12,6 @@ function genererGallerie(works) {
         const captionWorks = document.createElement("figcaption");
         captionWorks.innerText = project.title;
 
-
         sectionGallery.appendChild(figWorks);
         figWorks.appendChild(imageWorks);
         figWorks.appendChild(captionWorks);
@@ -57,3 +56,4 @@ boutonHotelRestaurant.addEventListener("click", function () {
     document.querySelector(".gallery").innerHTML = '';
     genererGallerie(hotelRestaurantFiltrer);
 });
+
