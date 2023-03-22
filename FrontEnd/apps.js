@@ -1,8 +1,7 @@
-const response = await fetch("http://localhost:5678/api/works");
-const works = await response.json();
+
 
 let modal = null
-const focusableSelector = 'button, a, input, img'
+const focusableSelector = 'button, a, input'
 let focusablesElements = []
 let previouslyFocusedElement = null
 
@@ -67,6 +66,8 @@ window.addEventListener('keydown', function(e) {
     }
 })
 
+const response = await fetch("http://localhost:5678/api/works");
+const works = await response.json();
 /**
  * tentative crétion gallery dans modal
  */
