@@ -93,7 +93,9 @@ function genererGallerieModal(works) {
 
 genererGallerieModal(works)
 
-addEventListener('click', )
+poubelle.addEventListener('click', function () {
+    
+})
 
 
 
