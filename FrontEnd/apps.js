@@ -69,6 +69,9 @@ const works = await response.json();
 /**
  * gallery dans modal
  */
+
+let indexWorks = []
+
 function genererGallerieModal(works) {
     for(let i=0; i<works.length; i++){
         const project = works[i];
@@ -81,6 +84,7 @@ function genererGallerieModal(works) {
         captionWorksModal.innerHTML = "éditer";
         const poubelleButton = document.createElement("button");
         poubelleButton.className = "poubelle-button"
+        indexWorks.push(poubelleButton)
         const poubelleIcone = document.createElement("img");
         poubelleIcone.className = "poubelle-modal"
         poubelleIcone.src = "./assets/images/poubelle.png";
@@ -89,14 +93,29 @@ function genererGallerieModal(works) {
         figWorksModal.appendChild(captionWorksModal);
         poubelleButton.appendChild(poubelleIcone);
         figWorksModal.appendChild(poubelleButton)
+        poubelleButton.addEventListener("click", function() {
+            functionDelete(project)
+        })
     }
 }
 
 genererGallerieModal(works)
+console.log(indexWorks)
+let localWorks = works //sauvegarde des works
 
-poubelle.addEventListener('click', function () {
-    k
-})
+const functionDelete = async function (work) {
+    let id = work.id
+    console.log(id)
+    console.log(localStorage.getItem("token"))
+    await fetch(`http://localhost:5678/api/works/${id}`, {
+        method: 'DELETE',
+        headers: {
+            "accept": "*/*",
+            "Authorization": `Bearer ${localStorage.getItem("token")}`,
+        }
+    })
+}
+   
 
 
 
