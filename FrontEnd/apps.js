@@ -1,5 +1,3 @@
-
-
 let modal = null
 const focusableSelector = 'button, a, input'
 let focusablesElements = []
@@ -81,13 +79,16 @@ function genererGallerieModal(works) {
         imageWorksModal.src = project.imageUrl;
         const captionWorksModal = document.createElement("figcaption");
         captionWorksModal.innerHTML = "éditer";
-        const poubelle = document.createElement("img");
-        poubelle.className = "poubelle-modal"
-        poubelle.src = "./assets/images/poubelle.png";
+        const poubelleButton = document.createElement("button");
+        poubelleButton.className = "poubelle-button"
+        const poubelleIcone = document.createElement("img");
+        poubelleIcone.className = "poubelle-modal"
+        poubelleIcone.src = "./assets/images/poubelle.png";
         galleryMiniature.appendChild(figWorksModal);
         figWorksModal.appendChild(imageWorksModal);
         figWorksModal.appendChild(captionWorksModal);
-        figWorksModal.appendChild(poubelle)
+        poubelleButton.appendChild(poubelleIcone);
+        figWorksModal.appendChild(poubelleButton)
     }
 }
 

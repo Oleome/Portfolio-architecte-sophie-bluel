@@ -361,10 +361,18 @@ footer nav ul {
 	object-fit: fill;
 }
 
-.poubelle-modal {
+.poubelle-button {
 	position: absolute;
 	top: 6px;
 	right: 5.2px;
+	padding: 0;
+	height: 17px;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.poubelle-modal {
 	padding: 4px;
 	border-radius: 2px;
 	background-color: black;
