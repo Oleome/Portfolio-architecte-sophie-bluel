@@ -283,7 +283,7 @@ footer nav ul {
 	overflow: auto;
 	background-color: #FFF;
 	width: 630px;
-	height: 70vh;
+	height: 80vh;
 	max-width: calc(100% - 20px);
 	max-height: calc(100% - 80px);
 	padding: 32px 35px;
@@ -369,6 +369,8 @@ footer nav ul {
 	border-radius: 2px;
 	background-color: black;
 }
+
+
 
 @keyframes fadeIn {
 	

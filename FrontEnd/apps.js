@@ -71,24 +71,29 @@ const works = await response.json();
 /**
  * gallery dans modal
  */
-for(let i=0; i<works.length; i++){
-    const project = works[i];
-    const galleryMiniature = document.querySelector('.miniature')
-    const figWorksModal = document.createElement("figure")
-    const imageWorksModal = document.createElement("img");
-    imageWorksModal.className = "image-gallery-modal"
-    imageWorksModal.src = project.imageUrl;
-    const captionWorksModal = document.createElement("figcaption");
-    captionWorksModal.innerHTML = "éditer";
-    const poubelle = document.createElement("img");
-    poubelle.className = "poubelle-modal"
-    poubelle.src = "./assets/images/poubelle.png";
-    galleryMiniature.appendChild(figWorksModal);
-    figWorksModal.appendChild(imageWorksModal);
-    figWorksModal.appendChild(captionWorksModal);
-    figWorksModal.appendChild(poubelle)
+function genererGallerieModal(works) {
+    for(let i=0; i<works.length; i++){
+        const project = works[i];
+        const galleryMiniature = document.querySelector('.miniature')
+        const figWorksModal = document.createElement("figure")
+        const imageWorksModal = document.createElement("img");
+        imageWorksModal.className = "image-gallery-modal"
+        imageWorksModal.src = project.imageUrl;
+        const captionWorksModal = document.createElement("figcaption");
+        captionWorksModal.innerHTML = "éditer";
+        const poubelle = document.createElement("img");
+        poubelle.className = "poubelle-modal"
+        poubelle.src = "./assets/images/poubelle.png";
+        galleryMiniature.appendChild(figWorksModal);
+        figWorksModal.appendChild(imageWorksModal);
+        figWorksModal.appendChild(captionWorksModal);
+        figWorksModal.appendChild(poubelle)
+    }
 }
 
+genererGallerieModal(works)
+
+addEventListener('click', )
 
 
 
