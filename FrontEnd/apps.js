@@ -69,19 +69,24 @@ window.addEventListener('keydown', function(e) {
 const response = await fetch("http://localhost:5678/api/works");
 const works = await response.json();
 /**
- * tentative crétion gallery dans modal
+ * gallery dans modal
  */
 for(let i=0; i<works.length; i++){
     const project = works[i];
     const galleryMiniature = document.querySelector('.miniature')
     const figWorksModal = document.createElement("figure")
     const imageWorksModal = document.createElement("img");
+    imageWorksModal.className = "image-gallery-modal"
     imageWorksModal.src = project.imageUrl;
     const captionWorksModal = document.createElement("figcaption");
     captionWorksModal.innerHTML = "éditer";
+    const poubelle = document.createElement("img");
+    poubelle.className = "poubelle-modal"
+    poubelle.src = "./assets/images/poubelle.png";
     galleryMiniature.appendChild(figWorksModal);
     figWorksModal.appendChild(imageWorksModal);
     figWorksModal.appendChild(captionWorksModal);
+    figWorksModal.appendChild(poubelle)
 }
 
 

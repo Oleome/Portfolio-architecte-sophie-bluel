@@ -352,9 +352,22 @@ footer nav ul {
 	border-bottom: 1px solid #B3B3B3;
 }
 
-.miniature img {
+.miniature figure {
+	position: relative;
+}
+
+.image-gallery-modal {
 	width: 78px;
 	object-fit: fill;
+}
+
+.poubelle-modal {
+	position: absolute;
+	top: 6px;
+	right: 5.2px;
+	padding: 4px;
+	border-radius: 2px;
+	background-color: black;
 }
 
 @keyframes fadeIn {
@@ -385,4 +398,6 @@ footer nav ul {
 	padding: 11px 23px;
 	border-radius: 60px;
 }
+
+.
 
