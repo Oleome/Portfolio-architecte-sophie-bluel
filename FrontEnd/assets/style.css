@@ -343,6 +343,21 @@ footer nav ul {
 	justify-content: center;
 }
 
+.miniature {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 10px;
+	column-gap: 6px;
+	margin: 0 70px;
+	padding-bottom: 67px;
+	border-bottom: 1px solid #B3B3B3;
+}
+
+.miniature img {
+	width: 78px;
+	object-fit: fill;
+}
+
 @keyframes fadeIn {
 	
 }
@@ -370,19 +385,5 @@ footer nav ul {
 	margin-left: 21px;
 	padding: 11px 23px;
 	border-radius: 60px;
-}
-
-.miniature {
-	display: flex;
-	flex-wrap: wrap;
-	height: 350px;
-	row-gap: 10px;
-	column-gap: 6px;
-	margin: 0 70px;
-}
-
-.miniature img {
-	width: 78px;
-	object-fit: fill;
 }
 
