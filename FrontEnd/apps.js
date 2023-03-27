@@ -94,7 +94,7 @@ function genererGallerieModal(works) {
 genererGallerieModal(works)
 
 poubelle.addEventListener('click', function () {
-    
+    k
 })
 
 
