@@ -69,7 +69,7 @@ const works = await response.json();
 /**
  * gallery dans modal
  */
-
+let localWorks = works //sauvegarde des works
 let indexWorks = []
 
 function genererGallerieModal(works) {
@@ -93,8 +93,7 @@ function genererGallerieModal(works) {
         figWorksModal.appendChild(captionWorksModal);
         poubelleButton.appendChild(poubelleIcone);
         figWorksModal.appendChild(poubelleButton)
-        poubelleButton.addEventListener("click", function(e) {
-            e.preventDefault()
+        poubelleButton.addEventListener("click", function() {
             functionDelete(project)
         })
     }
@@ -102,8 +101,6 @@ function genererGallerieModal(works) {
 
 genererGallerieModal(works)
 console.log(indexWorks)
-
-let localWorks = works //sauvegarde des works
 
 const functionDelete = async function (work) {
     let id = work.id
