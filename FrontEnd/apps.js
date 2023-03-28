@@ -70,7 +70,6 @@ const works = await response.json();
  * gallery dans modal
  */
 let localWorks = works //sauvegarde des works
-let indexWorks = []
 
 function genererGallerieModal(works) {
     for(let i=0; i<works.length; i++){
@@ -84,7 +83,6 @@ function genererGallerieModal(works) {
         captionWorksModal.innerHTML = "éditer";
         const poubelleButton = document.createElement("button");
         poubelleButton.className = "poubelle-button"
-        indexWorks.push(poubelleButton)
         const poubelleIcone = document.createElement("img");
         poubelleIcone.className = "poubelle-modal"
         poubelleIcone.src = "./assets/images/poubelle.png";
@@ -92,34 +90,31 @@ function genererGallerieModal(works) {
         figWorksModal.appendChild(imageWorksModal);
         figWorksModal.appendChild(captionWorksModal);
         poubelleButton.appendChild(poubelleIcone);
-        figWorksModal.appendChild(poubelleButton)
-        poubelleButton.addEventListener("click", function(event) {
-            console.log(event)
-            event.preventDefault()
-            functionDelete(project)
-        })
+        figWorksModal.appendChild(poubelleButton);
+        deleteWorksModal(project)
     }
 }
 
 genererGallerieModal(works)
-console.log(indexWorks)
 
-const functionDelete = async function (work) {
-    let id = work.id
-    console.log(id)
-    console.log(localStorage.getItem("token"))
-    await fetch(`http://localhost:5678/api/works/${id}`, {
-        method: 'DELETE',
-        headers: {
-            "accept": "*/*",
-            "Authorization": `Bearer ${localStorage.getItem("token")}`,
+function deleteWorksModal(work) {
+    const functionDelete = document.querySelector(".poubelle-button")
+    functionDelete.addEventListener("click", async function (event) {
+        event.stopPropagation()
+        let id = work.id
+        const del = await fetch(`http://localhost:5678/api/works/${id}`, {
+            method: 'DELETE',
+            headers: {
+                "accept": "*/*",
+                "Authorization": `Bearer ${localStorage.getItem("token")}`,
+            }
+        }).then(response => response) 
+        console.log(del)
+        if(del.ok) {
+            document.querySelector(".miniature").innerHTML = '';
+            genererGallerieModal(works)
         }
-    }).then(response => response) 
-
-    if(response.ok && works.length !== localWorks.length) {
-        document.querySelector(".miniature").innerHTML = '';
-        genererGallerieModal(works)
-    }
+    })
 }
    
 
