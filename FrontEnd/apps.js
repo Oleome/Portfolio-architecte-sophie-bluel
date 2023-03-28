@@ -4,6 +4,7 @@ let focusablesElements = []
 let previouslyFocusedElement = null
 
 const openModal = function (e) {
+    console.log('ici c openmodal')
     e.preventDefault()
     modal = document.querySelector(e.target.getAttribute('href'))
     focusablesElements = Array.from(modal.querySelectorAll(focusableSelector))
@@ -18,6 +19,7 @@ const openModal = function (e) {
 }
 
 const closeModal = function (e) {
+    console.log('là on close la modal')
     if (modal === null) return
     if (previouslyFocusedElement !== null) previouslyFocusedElement.focus()
     e.preventDefault()
@@ -72,6 +74,7 @@ const works = await response.json();
 let localWorks = works //sauvegarde des works
 
 function genererGallerieModal(works) {
+    console.log('on génère la gallery')
     for(let i=0; i<works.length; i++){
         const project = works[i];
         const galleryMiniature = document.querySelector('.miniature')
@@ -94,6 +97,7 @@ function genererGallerieModal(works) {
         poubelleButton.addEventListener("click", function(event) {
             functionDelete(project, event)
         })
+        console.log('fin de la génération de la gallery')
     }
 }
 
@@ -111,12 +115,19 @@ const functionDelete = async function (work, event) {
             "Authorization": `Bearer ${localStorage.getItem("token")}`,
         }
     }).then(response => response) 
+
     console.log(del)
     if(del.ok) {
-        document.querySelector(".miniature").innerHTML = '';
+        console.log("la suppression s'est bien passée")
+        //document.querySelector(".miniature").innerHTML = '';
         genererGallerieModal(works)
+        console.log('on a refait la gallery')
     }
+    console.log('pourquoi on reload ?')
+    event.preventDefault();
 }
+
+console.log('coucou c la fin du code')
    
 
 
