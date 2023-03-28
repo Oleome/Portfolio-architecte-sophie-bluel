@@ -90,31 +90,32 @@ function genererGallerieModal(works) {
         figWorksModal.appendChild(imageWorksModal);
         figWorksModal.appendChild(captionWorksModal);
         poubelleButton.appendChild(poubelleIcone);
-        figWorksModal.appendChild(poubelleButton);
-        deleteWorksModal(project)
+        figWorksModal.appendChild(poubelleButton)
+        poubelleButton.addEventListener("click", function(event) {
+            functionDelete(project, event)
+        })
     }
 }
 
 genererGallerieModal(works)
 
-function deleteWorksModal(work) {
-    const functionDelete = document.querySelector(".poubelle-button")
-    functionDelete.addEventListener("click", async function (event) {
-        event.stopPropagation()
-        let id = work.id
-        const del = await fetch(`http://localhost:5678/api/works/${id}`, {
-            method: 'DELETE',
-            headers: {
-                "accept": "*/*",
-                "Authorization": `Bearer ${localStorage.getItem("token")}`,
-            }
-        }).then(response => response) 
-        console.log(del)
-        if(del.ok) {
-            document.querySelector(".miniature").innerHTML = '';
-            genererGallerieModal(works)
+const functionDelete = async function (work, event) {
+    event.stopPropagation()
+    let id = work.id
+    console.log(id)
+    console.log(localStorage.getItem("token"))
+    const del = await fetch(`http://localhost:5678/api/works/${id}`, {
+        method: 'DELETE',
+        headers: {
+            "accept": "*/*",
+            "Authorization": `Bearer ${localStorage.getItem("token")}`,
         }
-    })
+    }).then(response => response) 
+    console.log(del)
+    if(del.ok) {
+        document.querySelector(".miniature").innerHTML = '';
+        genererGallerieModal(works)
+    }
 }
    
 
