@@ -101,6 +101,7 @@ function genererGallerieModal(works) {
 
 genererGallerieModal(works)
 console.log(indexWorks)
+
 let localWorks = works //sauvegarde des works
 
 const functionDelete = async function (work) {
@@ -113,7 +114,14 @@ const functionDelete = async function (work) {
             "accept": "*/*",
             "Authorization": `Bearer ${localStorage.getItem("token")}`,
         }
-    })
+    }).then(response=>response) 
+
+    if(works!==null) {
+        genererGallerieModal(works)
+    }
+    else {
+        closeModal(e)
+    }
 }
    
 
