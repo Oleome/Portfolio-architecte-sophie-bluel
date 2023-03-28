@@ -21,7 +21,7 @@ function ajoutListenerIdentifiants() {
         } else {
             // Le formulaire est invalide, message d'erreur
             const messageErreur = document.createElement("div");
-            messageErreur.textContent = "Erreur dans l’identifiant ou le mot de passe";
+            messageErreur.textContent = `Erreur dans l’identifiant ou le mot de passe`;
             messageErreur.classList.add("message-erreur");
             formulaireLogin.appendChild(messageErreur);
         }
