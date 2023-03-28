@@ -120,9 +120,6 @@ const functionDelete = async function (work) {
         document.querySelector(".miniature").innerHTML = '';
         genererGallerieModal(works)
     }
-    if(response.ok && works.length === 0) {
-        closeModal(e)
-    }
 }
    
 
