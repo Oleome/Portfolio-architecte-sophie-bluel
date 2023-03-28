@@ -114,12 +114,13 @@ const functionDelete = async function (work) {
             "accept": "*/*",
             "Authorization": `Bearer ${localStorage.getItem("token")}`,
         }
-    }).then(response=>response) 
+    }).then(response => response) 
 
-    if(works!==null) {
+    if(response.ok && works.length !== localWorks.length) {
+        document.querySelector(".miniature").innerHTML = '';
         genererGallerieModal(works)
     }
-    else {
+    if(response.ok && works.length === 0) {
         closeModal(e)
     }
 }
