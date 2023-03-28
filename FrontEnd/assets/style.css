@@ -348,9 +348,8 @@ footer nav ul {
 	row-gap: 10px;
 	column-gap: 6px;
 	margin: 0 70px;
-	padding-bottom: 50px;
 	border-bottom: 1px solid #B3B3B3;
-	height: 45vh;
+	height: 50vh;
 }
 
 .miniature figure {
