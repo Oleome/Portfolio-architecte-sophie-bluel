@@ -28,8 +28,7 @@ const closeModal = function (e) {
     modal.removeEventListener('click', closeModal)
     modal.querySelector('.js-modal-close').removeEventListener('click', closeModal)
     modal = null
-    genererGallerie()
-
+    genererGallerie(works)
 }
 
 const stopPropagation = function(e) {
