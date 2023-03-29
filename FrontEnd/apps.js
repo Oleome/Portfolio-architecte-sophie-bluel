@@ -130,7 +130,14 @@ const functionDelete = async function (work, event) {
     }
 }
 
+//ajouter une photo
 
+const ajouterPhoto = document.querySelector('#ajouter-photo-modal')
+ajouterPhoto.addEventListener("click", function() {
+    let arrowButton = document.querySelector('.back-modal')
+    arrowButton.style.display = null
+    let modalTitle = document.querySelector('#title-modal')
+})
 
 
 

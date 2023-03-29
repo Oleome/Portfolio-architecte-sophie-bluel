@@ -322,15 +322,30 @@ footer nav ul {
 	margin-left: 31px;
 }
 
-.modal-close {
-	margin-left: auto;
+.modal-icone {
 	display: flex;
-	width: 12px;
-	height: 12px;
-	justify-content: center;
+	height: 15px;
 	align-items: center;
 	background-color: #FFF;
 	border: none;
+}
+
+.modal-icone button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.modal-icone button:first-child {
+	margin-right: auto;
+}
+
+.modal-icone button:nth-child(2) {
+	margin-left: auto;
+}
+
+.modal-icone i {
+	transform: scale(1.2);
 }
 
 #ajouter-photo-modal {
