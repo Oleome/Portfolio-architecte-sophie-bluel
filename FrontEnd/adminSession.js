@@ -16,5 +16,10 @@ if(localStorage.getItem('token')){
     let bandeauAdmin = document.querySelector('.bandeau-admin') 
     bandeauAdmin.style.display = null  
     document.body.prepend(bandeauAdmin)
+
+    /**
+     * afficher bouton modifier
+     */
+    
 }
 

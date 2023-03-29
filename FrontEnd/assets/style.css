@@ -111,16 +111,13 @@ li:hover, header a:hover {
 	align-items: center;
 }
 #introduction figure {
-	flex: 1
+	flex: 1;	
 }
-#introduction img, #introduction a{
+
+#introduction img {
 	display: block;
 	margin: auto;
 	width: 80%;
-}
-
-#introduction a {
-	margin-top: 15px;
 }
 
 #introduction article {
