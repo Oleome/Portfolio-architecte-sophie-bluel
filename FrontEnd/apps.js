@@ -1,4 +1,3 @@
-import {genererGallerie} from './works.js'
 let modal = null
 const focusableSelector = 'button, a, input'
 let focusablesElements = []
@@ -94,10 +93,6 @@ function genererGallerieModal(works) {
         figWorksModal.appendChild(poubelleButton)
         poubelleButton.addEventListener("click", function(event) {
             functionDelete(project, event)
-            genererGallerie(works)
-            if(works.length === 0){
-                closeModal()
-            }
         })
     }
 }
@@ -120,6 +115,9 @@ const functionDelete = async function (work, event) {
         const response = await fetch("http://localhost:5678/api/works");
         const works = await response.json();
         genererGallerieModal(works)
+    }
+    if(works.length === 0) {
+        closeModal()
     }
 }
 
