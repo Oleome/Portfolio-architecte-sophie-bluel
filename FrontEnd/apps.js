@@ -114,13 +114,17 @@ const functionDelete = async function (work, event) {
         document.querySelector(".miniature").innerHTML = '';
         const response = await fetch("http://localhost:5678/api/works");
         const works = await response.json();
-        genererGallerieModal(works)
+        console.log(works)
+        if(works===null) {
+            closeModal()
+        }
+        else {
+            genererGallerieModal(works)
+        }
     }
 }
 
-if(works.length === 0) {
-    closeModal()
-}   
+
 
 
 
