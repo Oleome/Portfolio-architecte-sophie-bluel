@@ -93,6 +93,9 @@ function genererGallerieModal(works) {
         figWorksModal.appendChild(poubelleButton)
         poubelleButton.addEventListener("click", function(event) {
             functionDelete(project, event)
+            if(project===null){
+                closeModal()
+            }
         })
     }
 }
