@@ -1,7 +1,7 @@
 const response = await fetch("http://localhost:5678/api/works");
 const works = await response.json();
 
-function genererGallerie(works) {
+export function genererGallerie(works) {
     for(let i=0; i<works.length; i++){
 
         const project = works[i];
