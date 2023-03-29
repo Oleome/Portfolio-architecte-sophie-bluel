@@ -1,4 +1,8 @@
+const response = await fetch("http://localhost:5678/api/works");
+const works = await response.json();
+
 import {genererGallerie} from './works.js'
+
 let modal = null
 const focusableSelector = 'button, a, input'
 let focusablesElements = []
@@ -66,8 +70,6 @@ window.addEventListener('keydown', function(e) {
     }
 })
 
-const response = await fetch("http://localhost:5678/api/works");
-const works = await response.json();
 /**
  * gallery dans modal
  */
