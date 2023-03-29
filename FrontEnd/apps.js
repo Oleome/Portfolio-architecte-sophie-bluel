@@ -35,7 +35,11 @@ const closeModal = async function (e) {
     const response = await fetch("http://localhost:5678/api/works");
     const works = await response.json();
     document.querySelector(".gallery").innerHTML = '';
-    genererGallerie(works)
+    genererGallerie(works);
+    let arrowButton = document.querySelector('.back-modal')
+    arrowButton.style.display = "none";
+    let modalTitle = document.querySelector('#title-modal')
+    modalTitle.innerHTML = 'Galerie photo'
 }
 
 const stopPropagation = function(e) {
@@ -137,6 +141,7 @@ ajouterPhoto.addEventListener("click", function() {
     let arrowButton = document.querySelector('.back-modal')
     arrowButton.style.display = null
     let modalTitle = document.querySelector('#title-modal')
+    modalTitle.innerHTML = 'Ajout photo'
 })
 
 
