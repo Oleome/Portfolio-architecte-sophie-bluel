@@ -34,6 +34,7 @@ const closeModal = async function (e) {
     modal = null
     const response = await fetch("http://localhost:5678/api/works");
     const works = await response.json();
+    document.querySelector(".gallery").innerHTML = '';
     genererGallerie(works)
 }
 
