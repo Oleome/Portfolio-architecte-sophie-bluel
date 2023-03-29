@@ -1,3 +1,4 @@
+import {genererGallerie} from './works.js'
 let modal = null
 const focusableSelector = 'button, a, input'
 let focusablesElements = []
@@ -27,6 +28,8 @@ const closeModal = function (e) {
     modal.removeEventListener('click', closeModal)
     modal.querySelector('.js-modal-close').removeEventListener('click', closeModal)
     modal = null
+    genererGallerie()
+
 }
 
 const stopPropagation = function(e) {
