@@ -116,7 +116,7 @@ const functionDelete = async function (work, event) {
         const works = await response.json();
         console.log(works)
         if(works.length===0) {
-            closeModal(e)
+            closeModal(event)
         }
         else {
             genererGallerieModal(works)
