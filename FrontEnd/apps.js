@@ -20,6 +20,8 @@ const openModal = function (e) {
     modal.addEventListener('click', closeModal)
     modal.querySelector('.js-modal-close').addEventListener('click', closeModal)
     modal.querySelector('.js-modal-stop').addEventListener('click', stopPropagation)
+    document.querySelector('.miniature').innerHTML = ''
+    genererGallerieModal(works)
 }
 
 const closeModal = async function (e) {
@@ -40,6 +42,7 @@ const closeModal = async function (e) {
     arrowButton.style.display = "none";
     let modalTitle = document.querySelector('#title-modal')
     modalTitle.innerHTML = 'Galerie photo'
+    genererGallerieModal(works)
 }
 
 const stopPropagation = function(e) {
@@ -142,6 +145,8 @@ ajouterPhoto.addEventListener("click", function() {
     arrowButton.style.display = null
     let modalTitle = document.querySelector('#title-modal')
     modalTitle.innerHTML = 'Ajout photo'
+    let galleryMiniature = document.querySelector(".miniature")
+    galleryMiniature.innerHTML = ''
 })
 
 
