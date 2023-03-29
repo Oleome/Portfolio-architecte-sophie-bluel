@@ -22,7 +22,7 @@ const openModal = function (e) {
     modal.querySelector('.js-modal-stop').addEventListener('click', stopPropagation)
 }
 
-const closeModal = function (e) {
+const closeModal = async function (e) {
     if (modal === null) return
     if (previouslyFocusedElement !== null) previouslyFocusedElement.focus()
     e.preventDefault()
@@ -32,6 +32,8 @@ const closeModal = function (e) {
     modal.removeEventListener('click', closeModal)
     modal.querySelector('.js-modal-close').removeEventListener('click', closeModal)
     modal = null
+    const response = await fetch("http://localhost:5678/api/works");
+    const works = await response.json();
     genererGallerie(works)
 }
 
@@ -73,7 +75,6 @@ window.addEventListener('keydown', function(e) {
 /**
  * gallery dans modal
  */
-let localWorks = works //sauvegarde des works
 
 function genererGallerieModal(works) {
     for(let i=0; i<works.length; i++){
