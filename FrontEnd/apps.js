@@ -115,7 +115,7 @@ const functionDelete = async function (work, event) {
         const response = await fetch("http://localhost:5678/api/works");
         const works = await response.json();
         console.log(works)
-        if(works===null) {
+        if(works.length===0) {
             closeModal()
         }
         else {
