@@ -113,10 +113,14 @@ li:hover, header a:hover {
 #introduction figure {
 	flex: 1
 }
-#introduction img {
+#introduction img, #introduction a{
 	display: block;
 	margin: auto;
 	width: 80%;
+}
+
+#introduction a {
+	margin-top: 15px;
 }
 
 #introduction article {
