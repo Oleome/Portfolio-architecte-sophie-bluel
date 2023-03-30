@@ -180,7 +180,6 @@ ajouterPhoto.addEventListener("click", function() {
     validateButton.className = 'se-connecter'
     validateButton.innerText = 'Valider'
     formModal.appendChild(validateButton)
-
 })
 
 

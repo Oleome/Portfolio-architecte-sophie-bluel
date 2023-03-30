@@ -377,12 +377,13 @@ footer nav ul {
 	row-gap: 10px;
 	column-gap: 6px;
 	margin: 0 70px;
-	border-bottom: 1px solid #B3B3B3;
 	height: 50vh;
 }
 
-.miniature figure {
-	position: relative;
+.border {
+	height: 1px;
+	width: 420px;
+	background-color: #B3B3B3;
 }
 
 .image-gallery-modal {
