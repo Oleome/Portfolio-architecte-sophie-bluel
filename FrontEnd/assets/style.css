@@ -459,6 +459,7 @@ footer nav ul {
 	background-color:#E8F1F6;
 	justify-content: space-around;
 	align-items: center;
+	margin-bottom: 30px;
 }
 
 .fieldset-modal i {
@@ -469,8 +470,7 @@ footer nav ul {
 }
 
 .fieldset-modal input {
-	margin-top: 1em;
-	margin-bottom: 1em;
+	margin-bottom: 21px;
 }
 
 .fieldset-modal span {
@@ -481,6 +481,14 @@ footer nav ul {
 	height: 51px;
 }
 
-.form-modal > input:last-child {
-	margin-bottom: 47px;
+.input-title-modal {
+	margin-bottom: 21px;
+}
+
+.modal .se-connecter {
+	background-color: #A7A7A7;
+	width: 237px;
+	height: 36px;
+	border: none;
+	font-size: .9rem;
 }

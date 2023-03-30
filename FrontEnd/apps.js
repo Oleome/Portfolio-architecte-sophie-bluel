@@ -183,7 +183,7 @@ ajouterPhoto.addEventListener("click", function() {
     const validateButton = document.createElement('input')
     validateButton.setAttribute('type', 'submit')
     validateButton.className = 'se-connecter'
-    validateButton.innerText = 'Valider'
+    validateButton.setAttribute('value', 'Valider')
     formModal.appendChild(validateButton)
     border.style.display = 'none'
 })
