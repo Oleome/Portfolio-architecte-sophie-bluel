@@ -463,18 +463,20 @@ footer nav ul {
 }
 
 .fieldset-modal i {
-	transform: scale(3);
-	color: #B3B3B3;
+	transform: scale(3.5);
+	color: #CBD6DC;
 	margin-top: 3em;
-	margin-bottom: 1.5em;
+	margin-bottom: 2.5em;
 }
 
 .fieldset-modal input {
+	background-color:#CBD6DC;
 	margin-bottom: 21px;
 }
 
 .fieldset-modal span {
 	margin-bottom: 2em;
+	font-size: .63rem;
 }
 
 .form-modal > input {

@@ -159,7 +159,7 @@ ajouterPhoto.addEventListener("click", function() {
     fieldsetModal.className = "fieldset-modal"
     formModal.appendChild(fieldsetModal)
     const iconeFormModal = document.createElement('i')
-    iconeFormModal.className = "fa-sharp fa-solid fa-image"
+    iconeFormModal.className = "fa-sharp fa-regular fa-image"
     fieldsetModal.appendChild(iconeFormModal)
     const buttonFormModal = document.createElement('input')
     buttonFormModal.setAttribute('type', 'file')
