@@ -17,9 +17,6 @@ if(localStorage.getItem('token')){
     bandeauAdmin.style.display = null  
     document.body.prepend(bandeauAdmin)
 
-    /**
-     * afficher bouton modifier
-     */
     
 }
 

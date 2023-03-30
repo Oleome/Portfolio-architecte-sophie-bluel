@@ -379,6 +379,10 @@ footer nav ul {
 	margin: 0 70px;
 }
 
+.miniature figure {
+	position: relative;
+}
+
 .miniature figcaption {
 	margin-bottom: 11px;
 }

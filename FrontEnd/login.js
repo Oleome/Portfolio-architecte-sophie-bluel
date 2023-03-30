@@ -11,13 +11,13 @@ function ajoutListenerIdentifiants() {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: chargeUtile
-        }) .then(response => response)
+        }) 
         
         const data = await request.json()
         if (request.ok) {
             // Le formulaire est valide, redirection vers la page admin
-            window.location.href = "./index.html";
             localStorage.setItem("token", data.token)
+            window.location.href = "./index.html"            
         } else {
             // Le formulaire est invalide, message d'erreur
             const messageErreur = document.createElement("div");

@@ -12,7 +12,7 @@ const ajouterPhoto = document.querySelector('#ajouter-photo-modal')
 
 const openModal = function (e) {
     e.preventDefault()
-    modal = document.querySelector(e.target.getAttribute('href'))
+    modal = document.querySelector('#modal1')
     focusablesElements = Array.from(modal.querySelectorAll(focusableSelector))
     previouslyFocusedElement = document.querySelector(':focus')
     modal.style.display = null
@@ -127,7 +127,7 @@ const functionDelete = async function (work, event) {
             "accept": "*/*",
             "Authorization": `Bearer ${localStorage.getItem("token")}`,
         }
-    }).then(response => response) 
+    })
 
     if(del.ok) {
         document.querySelector(".miniature").innerHTML = '';
