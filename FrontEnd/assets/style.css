@@ -296,11 +296,9 @@ footer nav ul {
 .modal-gallery {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	overflow: auto;
 	background-color: #FFF;
 	width: 630px;
-	height: 80vh;
 	max-width: calc(100% - 20px);
 	max-height: calc(100% - 80px);
 	padding: 32px 35px 48px;
@@ -328,6 +326,7 @@ footer nav ul {
 	align-items: center;
 	background-color: #FFF;
 	border: none;
+	margin-bottom: 16px;
 }
 
 .modal-icone button {
@@ -350,7 +349,7 @@ footer nav ul {
 
 #ajouter-photo-modal {
 	white-space: nowrap;
-	margin: 0 auto;
+	margin: 38px auto 0;
 	padding: 10px 49px 9px;
 	display: flex;
 	justify-content: center;
@@ -360,7 +359,7 @@ footer nav ul {
 #title-modal {
 	text-align: center;
 	font-size: 1.63rem;
-	margin-bottom: 30px;
+	margin-bottom: 46px;
 }
 
 #mes-projets h2 {
@@ -370,6 +369,7 @@ footer nav ul {
 #supprimer {
 	display: flex;
 	justify-content: center;
+	margin-top: 23px;
 }
 
 .miniature {
@@ -387,7 +387,7 @@ footer nav ul {
 	height: 1px;
 	width: 420px;
 	background-color: #B3B3B3;
-	margin-top: 15px;
+	margin-top: 47px;
 }
 
 .image-gallery-modal {
