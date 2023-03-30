@@ -148,6 +148,7 @@ ajouterPhoto.addEventListener("click", function() {
     let galleryMiniature = document.querySelector(".miniature")
     galleryMiniature.innerHTML = ''
     const formModal = document.createElement('form')
+    formModal.className = "form-modal"
     galleryMiniature.appendChild(formModal);
     const fieldsetModal = document.createElement('fieldset')
     fieldsetModal.className = "fieldset-modal"
@@ -162,6 +163,12 @@ ajouterPhoto.addEventListener("click", function() {
     const spanFormModal = document.createElement('span')
     spanFormModal.innerText = 'jpg, png : 4mo max'
     fieldsetModal.appendChild(spanFormModal)
+    const inputTitle = document.createElement('input')
+    inputTitle.className = "input-title-modal"
+    formModal.appendChild(inputTitle)
+    const inputCategory = document.createElement('input')
+    inputCategory.className = "input-category-modal"
+    formModal.appendChild(inputCategory)
 })
 
 

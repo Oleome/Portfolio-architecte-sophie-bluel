@@ -440,6 +440,12 @@ footer nav ul {
 
 /* formulaire d'envoi photo */
 
+.form-modal {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
 .fieldset-modal {
 	display: flex;
 	flex-direction: column;
@@ -462,4 +468,12 @@ footer nav ul {
 
 .fieldset-modal span {
 	margin-bottom: 1em;
+}
+
+.form-modal > input {
+	height: 51px;
+}
+
+.form-modal > input:last-child {
+	margin-bottom: 47px;
 }
