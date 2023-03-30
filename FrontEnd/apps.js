@@ -147,6 +147,17 @@ ajouterPhoto.addEventListener("click", function() {
     modalTitle.innerHTML = 'Ajout photo'
     let galleryMiniature = document.querySelector(".miniature")
     galleryMiniature.innerHTML = ''
+    const formModal = document.createElement('form')
+    galleryMiniature.appendChild(formModal);
+    const fieldsetModal = document.createElement('fieldset')
+    fieldsetModal.className = "fieldset-modal"
+    formModal.appendChild(fieldsetModal)
+    const iconeFormModal = document.createElement('i')
+    iconeFormModal.className = "icone-form-modal"
+    fieldsetModal.appendChild(iconeFormModal)
+    const buttonFormModal = document.createElement('button')
+    buttonFormModal.className = "button-form-modal"
+    fieldsetModal.appendChild(buttonFormModal)
 })
 
 
