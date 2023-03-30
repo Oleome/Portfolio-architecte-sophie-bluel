@@ -7,6 +7,7 @@ let modal = null
 const focusableSelector = 'button, a, input'
 let focusablesElements = []
 let previouslyFocusedElement = null
+const ajouterPhoto = document.querySelector('#ajouter-photo-modal')
 
 const openModal = function (e) {
     e.preventDefault()
@@ -43,6 +44,9 @@ const closeModal = async function (e) {
     let modalTitle = document.querySelector('#title-modal')
     modalTitle.innerHTML = 'Galerie photo'
     genererGallerieModal(works)
+    ajouterPhoto.style.display = null
+    const deletePhoto = document.querySelector('#supprimer')
+    deletePhoto.style.display = null
 }
 
 const stopPropagation = function(e) {
@@ -139,7 +143,6 @@ const functionDelete = async function (work, event) {
 
 //ajouter une photo
 
-const ajouterPhoto = document.querySelector('#ajouter-photo-modal')
 ajouterPhoto.addEventListener("click", function() {
     let arrowButton = document.querySelector('.back-modal')
     arrowButton.style.display = null
@@ -170,6 +173,14 @@ ajouterPhoto.addEventListener("click", function() {
     inputCategory.className = "input-category-modal"
     formModal.appendChild(inputCategory)
     ajouterPhoto.style.display = 'none'
+    const deletePhoto = document.querySelector('#supprimer')
+    deletePhoto.style.display = 'none'
+    const validateButton = document.createElement('input')
+    validateButton.setAttribute('type', 'submit')
+    validateButton.className = 'se-connecter'
+    validateButton.innerText = 'Valider'
+    formModal.appendChild(validateButton)
+
 })
 
 
