@@ -177,6 +177,9 @@ ajouterPhoto.addEventListener("click", function() {
     ajouterPhoto.style.display = 'none'
     const deletePhoto = document.querySelector('#supprimer')
     deletePhoto.style.display = 'none'
+    const borderPhoto = document.createElement('hr')
+    borderPhoto.className = "border"
+    formModal.appendChild(borderPhoto)
     const validateButton = document.createElement('input')
     validateButton.setAttribute('type', 'submit')
     validateButton.className = 'se-connecter'
