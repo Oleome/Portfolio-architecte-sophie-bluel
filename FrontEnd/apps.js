@@ -7,6 +7,7 @@ let modal = null
 const focusableSelector = 'button, a, input'
 let focusablesElements = []
 let previouslyFocusedElement = null
+const border = document.querySelector('.border')
 const ajouterPhoto = document.querySelector('#ajouter-photo-modal')
 
 const openModal = function (e) {
@@ -47,6 +48,7 @@ const closeModal = async function (e) {
     ajouterPhoto.style.display = null
     const deletePhoto = document.querySelector('#supprimer')
     deletePhoto.style.display = null
+    border.style.display = null
 }
 
 const stopPropagation = function(e) {
@@ -180,6 +182,7 @@ ajouterPhoto.addEventListener("click", function() {
     validateButton.className = 'se-connecter'
     validateButton.innerText = 'Valider'
     formModal.appendChild(validateButton)
+    border.style.display = 'none'
 })
 
 
