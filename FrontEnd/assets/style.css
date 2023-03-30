@@ -438,5 +438,9 @@ footer nav ul {
 	border-radius: 60px;
 }
 
+/* formulaire d'envoi photo */
 
-
+.fieldset-modal {
+	display: flex;
+	flex-direction: column;
+}
