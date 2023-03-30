@@ -169,6 +169,7 @@ ajouterPhoto.addEventListener("click", function() {
     const inputCategory = document.createElement('input')
     inputCategory.className = "input-category-modal"
     formModal.appendChild(inputCategory)
+    ajouterPhoto.style.display = 'none'
 })
 
 
