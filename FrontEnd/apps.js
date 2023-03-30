@@ -168,11 +168,23 @@ ajouterPhoto.addEventListener("click", function() {
     const spanFormModal = document.createElement('span')
     spanFormModal.innerText = 'jpg, png : 4mo max'
     fieldsetModal.appendChild(spanFormModal)
+    const labelTitle = document.createElement('label')
+    labelTitle.className = 'label-modal'
+    labelTitle.setAttribute('for', 'form-title')
+    labelTitle.innerHTML = 'Titre'
+    formModal.appendChild(labelTitle)
     const inputTitle = document.createElement('input')
     inputTitle.className = "input-title-modal"
+    inputTitle.setAttribute('id', 'form-title')
     formModal.appendChild(inputTitle)
+    const labelCategory = document.createElement('label')
+    labelCategory.className = 'label-modal'
+    labelCategory.setAttribute('for', 'form-category')
+    labelCategory.innerHTML = 'Category'
+    formModal.appendChild(labelCategory)
     const inputCategory = document.createElement('input')
     inputCategory.className = "input-category-modal"
+    inputCategory.setAttribute('id', 'form-category')
     formModal.appendChild(inputCategory)
     ajouterPhoto.style.display = 'none'
     const deletePhoto = document.querySelector('#supprimer')
