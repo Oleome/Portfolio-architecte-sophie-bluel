@@ -443,4 +443,23 @@ footer nav ul {
 .fieldset-modal {
 	display: flex;
 	flex-direction: column;
+	width: 420px;
+	height: 169px;
+	background-color:#E8F1F6;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.fieldset-modal i {
+	transform: scale(3);
+	color: #B3B3B3;
+	margin-top: 2.5em;
+}
+
+.fieldset-modal input {
+	margin-top: 1em;
+}
+
+.fieldset-modal span {
+	margin-bottom: 1em;
 }
