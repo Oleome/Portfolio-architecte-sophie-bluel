@@ -145,8 +145,9 @@ const functionDelete = async function (work, event) {
 
 //ajouter une photo
 
-ajouterPhoto.addEventListener("click", function() {
-
+ajouterPhoto.addEventListener("click", function(e) {
+    closeModal(e)
+    openModal2(e)
     /*
     let arrowButton = document.querySelector('.back-modal')
     arrowButton.style.display = null
@@ -203,6 +204,14 @@ ajouterPhoto.addEventListener("click", function() {
     */
 })
 
+const openModal2 = function (e) {
+    e.preventDefault(e)
+    let modal2 = document.querySelector('#modal2')
+    modal2.style.display = null
+    modal2.removeAttribute('aria-hidden')
+    modal2.setAttribute('aria-modal', 'true')
+    genererGallerieModal(works)
+}
 
 
 
