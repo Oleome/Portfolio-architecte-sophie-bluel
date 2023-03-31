@@ -210,10 +210,6 @@ const openModal2 = function (e) {
     modal2.style.display = null
     modal2.removeAttribute('aria-hidden')
     modal2.setAttribute('aria-modal', 'true')
-    let arrowButton = document.querySelector('.back-modal')
-    arrowButton.style.display = null
-    let modalTitle = document.querySelector('#title-modal')
-    modalTitle.innerHTML = 'Ajout photo'
     let galleryMiniature = document.querySelector(".miniature")
     galleryMiniature.innerHTML = ''
     const formModal = document.createElement('form')
