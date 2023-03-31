@@ -210,7 +210,47 @@ const openModal2 = function (e) {
     modal2.style.display = null
     modal2.removeAttribute('aria-hidden')
     modal2.setAttribute('aria-modal', 'true')
-    genererGallerieModal(works)
+    let arrowButton = document.querySelector('.back-modal')
+    arrowButton.style.display = null
+    let modalTitle = document.querySelector('#title-modal')
+    modalTitle.innerHTML = 'Ajout photo'
+    let galleryMiniature = document.querySelector(".miniature")
+    galleryMiniature.innerHTML = ''
+    const formModal = document.createElement('form')
+    formModal.className = "form-modal"
+    galleryMiniature.appendChild(formModal);
+    const fieldsetModal = document.createElement('fieldset')
+    fieldsetModal.className = "fieldset-modal"
+    formModal.appendChild(fieldsetModal)
+    const iconeFormModal = document.createElement('i')
+    iconeFormModal.className = "fa-sharp fa-regular fa-image"
+    fieldsetModal.appendChild(iconeFormModal)
+    const buttonFormModal = document.createElement('input')
+    buttonFormModal.setAttribute('type', 'file')
+    buttonFormModal.className = "button-form-modal"
+    fieldsetModal.appendChild(buttonFormModal)
+    const spanFormModal = document.createElement('span')
+    spanFormModal.innerText = 'jpg, png : 4mo max'
+    fieldsetModal.appendChild(spanFormModal)
+    const labelTitle = document.createElement('label')
+    labelTitle.className = 'label-modal'
+    labelTitle.setAttribute('for', 'form-title')
+    labelTitle.innerHTML = 'Titre'
+    formModal.appendChild(labelTitle)
+    const inputTitle = document.createElement('input')
+    inputTitle.className = "input-title-modal"
+    inputTitle.setAttribute('id', 'form-title')
+    formModal.appendChild(inputTitle)
+    const labelCategory = document.createElement('label')
+    labelCategory.className = 'label-modal'
+    labelCategory.setAttribute('for', 'form-category')
+    labelCategory.innerHTML = 'Category'
+    formModal.appendChild(labelCategory)
+    const inputCategory = document.createElement('input')
+    inputCategory.className = "input-category-modal"
+    inputCategory.setAttribute('id', 'form-category')
+    formModal.appendChild(inputCategory)
+
 }
 
 
