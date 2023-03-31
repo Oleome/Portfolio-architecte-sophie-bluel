@@ -474,6 +474,7 @@ aside i {
 	justify-content: space-around;
 	align-items: center;
 	margin-bottom: 30px;
+	text-align: center;
 }
 
 .fieldset-modal i {
@@ -483,13 +484,19 @@ aside i {
 	margin-bottom: 2.5em;
 }
 
-.fieldset-modal input {
-	background-color:#CBD6DC;
-	margin-bottom: 21px;
+.label-fieldset {
+	display: flex;
+	justify-content: center;
+	width: 173px;
+	height: 36px;
+	background-color: #CBD6DC;
+	border-radius: 50px;
+	padding-top: 11px;
 }
 
 .fieldset-modal span {
-	margin-bottom: 2em;
+	margin-top: 7px;
+	margin-bottom: 19px;
 	font-size: .63rem;
 }
 

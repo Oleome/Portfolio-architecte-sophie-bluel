@@ -164,6 +164,13 @@ const openModal2 = function (e) {
     const buttonFormModal = document.createElement('input')
     buttonFormModal.setAttribute('type', 'file')
     buttonFormModal.className = "button-form-modal"
+    buttonFormModal.setAttribute('id', 'label-file')
+    buttonFormModal.style.display = 'none'
+    const labelFile = document.createElement('label')
+    labelFile.setAttribute('for', 'label-file')
+    labelFile.className = 'label-fieldset'
+    labelFile.innerHTML = '+ Ajouter photo'
+    fieldsetModal.appendChild(labelFile)
     fieldsetModal.appendChild(buttonFormModal)
     const spanFormModal = document.createElement('span')
     spanFormModal.innerText = 'jpg, png : 4mo max'
