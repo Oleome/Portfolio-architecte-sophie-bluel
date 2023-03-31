@@ -326,7 +326,7 @@ footer nav ul {
 	margin-left: 31px;
 }
 
-.modal-close {
+.modal-close, .modal-icone {
 	display: flex;
 	height: 15px;
 	align-items: center;
@@ -335,6 +335,10 @@ footer nav ul {
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
+}
+
+.back-modal {
+	display: block;
 }
 
 .modal-icone button:first-child {

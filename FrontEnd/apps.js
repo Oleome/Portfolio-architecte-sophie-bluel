@@ -40,8 +40,6 @@ const closeModal = async function (e) {
     const works = await response.json();
     document.querySelector(".gallery").innerHTML = '';
     genererGallerie(works);
-    let arrowButton = document.querySelector('.back-modal')
-    arrowButton.style.display = "none";
     let modalTitle = document.querySelector('#title-modal')
     modalTitle.innerHTML = 'Galerie photo'
     genererGallerieModal(works)
@@ -210,8 +208,6 @@ const openModal2 = function (e) {
     modal2.style.display = null
     modal2.removeAttribute('aria-hidden')
     modal2.setAttribute('aria-modal', 'true')
-    let galleryMiniature = document.querySelector(".miniature")
-    galleryMiniature.innerHTML = ''
     const formModal = document.createElement('form')
     formModal.className = "form-modal"
     galleryMiniature.appendChild(formModal);
