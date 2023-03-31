@@ -208,9 +208,10 @@ const openModal2 = function (e) {
     modal2.style.display = null
     modal2.removeAttribute('aria-hidden')
     modal2.setAttribute('aria-modal', 'true')
+    const divFormModal = document.querySelector('.form-modal')
     const formModal = document.createElement('form')
     formModal.className = "form-modal"
-    galleryMiniature.appendChild(formModal);
+    divFormModal.appendChild(formModal)
     const fieldsetModal = document.createElement('fieldset')
     fieldsetModal.className = "fieldset-modal"
     formModal.appendChild(fieldsetModal)
@@ -242,7 +243,6 @@ const openModal2 = function (e) {
     inputCategory.className = "input-category-modal"
     inputCategory.setAttribute('id', 'form-category')
     formModal.appendChild(inputCategory)
-
 }
 
 
