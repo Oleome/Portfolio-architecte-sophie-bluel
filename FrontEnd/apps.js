@@ -146,6 +146,8 @@ const functionDelete = async function (work, event) {
 //ajouter une photo
 
 ajouterPhoto.addEventListener("click", function() {
+
+    /*
     let arrowButton = document.querySelector('.back-modal')
     arrowButton.style.display = null
     let modalTitle = document.querySelector('#title-modal')
@@ -198,6 +200,7 @@ ajouterPhoto.addEventListener("click", function() {
     validateButton.setAttribute('value', 'Valider')
     formModal.appendChild(validateButton)
     border.style.display = 'none'
+    */
 })
 
 
