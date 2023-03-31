@@ -239,10 +239,19 @@ const openModal2 = function (e) {
     labelCategory.setAttribute('for', 'form-category')
     labelCategory.innerHTML = 'Category'
     formModal.appendChild(labelCategory)
-    const inputCategory = document.createElement('input')
-    inputCategory.className = "input-category-modal"
-    inputCategory.setAttribute('id', 'form-category')
-    formModal.appendChild(inputCategory)
+    const selectCategory = document.createElement('select')
+    selectCategory.className = "select-category-modal"
+    selectCategory.setAttribute('id', 'form-category')
+    const optionSelectObject = document.createElement('option')
+    optionSelectObject.innerHTML = 'Objet'
+    selectCategory.appendChild(optionSelectObject)
+    const optionSelectAppartement = document.createElement('option')
+    optionSelectAppartement.innerHTML = 'Appartement'
+    selectCategory.appendChild(optionSelectAppartement)
+    const optionSelectHorest = document.createElement('option')
+    optionSelectHorest.innerHTML = 'Hôtels et restaurants'
+    selectCategory.appendChild(optionSelectHorest)
+    formModal.appendChild(selectCategory)
 }
 
 

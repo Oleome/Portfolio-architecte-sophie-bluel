@@ -502,8 +502,9 @@ aside i {
 	width: 420px;
 }
 
-.input-category-modal {
+.select-category-modal {
 	width: 420px;
+	height: 51px;
 }
 
 .modal .se-connecter {
