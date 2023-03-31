@@ -17,6 +17,14 @@ if(localStorage.getItem('token')){
     bandeauAdmin.style.display = null  
     document.body.prepend(bandeauAdmin)
 
-    
+    /**
+     * afficher bouton modifier 
+     */
+
+    let boutonModifier = document.querySelector('.pen-modifier')
+    boutonModifier.style.display = null    
+
+    let boutonModifierASide = document.querySelector('.js-pen-modifier')
+    boutonModifierASide.style.display = null
 }
 
