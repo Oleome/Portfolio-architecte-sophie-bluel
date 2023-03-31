@@ -477,6 +477,10 @@ aside i {
 	text-align: center;
 }
 
+.label-modal {
+	align-self: flex-start;
+}
+
 .fieldset-modal i {
 	transform: scale(3.5);
 	color: #CBD6DC;

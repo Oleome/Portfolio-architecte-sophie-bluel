@@ -187,7 +187,7 @@ const openModal2 = function (e) {
     const labelCategory = document.createElement('label')
     labelCategory.className = 'label-modal'
     labelCategory.setAttribute('for', 'form-category')
-    labelCategory.innerHTML = 'Category'
+    labelCategory.innerHTML = 'Catégorie'
     formModal.appendChild(labelCategory)
     const selectCategory = document.createElement('select')
     selectCategory.className = "select-category-modal"
