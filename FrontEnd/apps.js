@@ -4,10 +4,10 @@ const works = await response.json();
 import {genererGallerie} from './works.js'
 
 let modal = null
+let modal2 = null
 const focusableSelector = 'button, a, input'
 let focusablesElements = []
 let previouslyFocusedElement = null
-const border = document.querySelector('.border')
 const ajouterPhoto = document.querySelector('#ajouter-photo-modal')
 
 const openModal = function (e) {
@@ -40,13 +40,6 @@ const closeModal = async function (e) {
     const works = await response.json();
     document.querySelector(".gallery").innerHTML = '';
     genererGallerie(works);
-    let modalTitle = document.querySelector('#title-modal')
-    modalTitle.innerHTML = 'Galerie photo'
-    genererGallerieModal(works)
-    ajouterPhoto.style.display = null
-    const deletePhoto = document.querySelector('#supprimer')
-    deletePhoto.style.display = null
-    border.style.display = null
 }
 
 const stopPropagation = function(e) {
@@ -204,10 +197,14 @@ ajouterPhoto.addEventListener("click", function(e) {
 
 const openModal2 = function (e) {
     e.preventDefault(e)
-    let modal2 = document.querySelector('#modal2')
+    modal2 = document.querySelector('#modal2')
     modal2.style.display = null
     modal2.removeAttribute('aria-hidden')
     modal2.setAttribute('aria-modal', 'true')
+    document.querySelector('.form-modal').innerHTML = ''
+    modal2.addEventListener('click', closeModal2)
+    modal2.querySelector('.js-modal-close').addEventListener('click', closeModal2)
+    modal2.querySelector('.js-modal-stop').addEventListener('click', stopPropagation)
     const divFormModal = document.querySelector('.form-modal')
     const formModal = document.createElement('form')
     formModal.className = "form-modal"
@@ -244,15 +241,31 @@ const openModal2 = function (e) {
     selectCategory.setAttribute('id', 'form-category')
     const optionSelectObject = document.createElement('option')
     optionSelectObject.innerHTML = 'Objet'
+    optionSelectObject.setAttribute('value', 'o')
     selectCategory.appendChild(optionSelectObject)
     const optionSelectAppartement = document.createElement('option')
     optionSelectAppartement.innerHTML = 'Appartement'
+    optionSelectAppartement.setAttribute('value', 'a')
     selectCategory.appendChild(optionSelectAppartement)
     const optionSelectHorest = document.createElement('option')
     optionSelectHorest.innerHTML = 'Hôtels et restaurants'
+    optionSelectHorest.setAttribute('value', 'h')
     selectCategory.appendChild(optionSelectHorest)
     formModal.appendChild(selectCategory)
 }
 
-
+const closeModal2 = async function (e) {
+    if (modal2 === null) return
+    e.preventDefault()
+    modal2.style.display = "none"
+    modal2.setAttribute('aria-hidden', 'true')
+    modal2.removeAttribute('aria-modal')
+    modal2.removeEventListener('click', closeModal2)
+    modal2.querySelector('.js-modal-close').removeEventListener('click', closeModal2)
+    modal2 = null
+    const response = await fetch("http://localhost:5678/api/works");
+    const works = await response.json();
+    document.querySelector(".gallery").innerHTML = '';
+    genererGallerie(works);
+}
 
