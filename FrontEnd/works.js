@@ -1,5 +1,6 @@
-const response = await fetch("http://localhost:5678/api/works");
+const response = await fetch(`${apiUrl}/works`);
 const works = await response.json();
+import {apiUrl} from './api.js';
 
 export const genererGallerie = function (works) {
     for(let i=0; i<works.length; i++){

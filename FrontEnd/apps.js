@@ -218,7 +218,7 @@ const closeModal2 = async function (e) {
     modal2.removeEventListener('click', closeModal2)
     modal2.querySelector('.js-modal-close').removeEventListener('click', closeModal2)
     modal2 = null
-    const response = await fetch("http://localhost:5678/api/works");
+    const response = await fetch(`${apiUrl}/works`);
     const works = await response.json();
     document.querySelector(".gallery").innerHTML = '';
     genererGallerie(works);
