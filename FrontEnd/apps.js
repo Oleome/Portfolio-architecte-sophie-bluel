@@ -2,6 +2,7 @@ const response = await fetch("http://localhost:5678/api/works");
 const works = await response.json();
 
 import {genererGallerie} from './works.js'
+import {apiUrl} from './api.js';
 
 let modal = null
 let modal2 = null
@@ -36,7 +37,7 @@ const closeModal = async function (e) {
     modal.removeEventListener('click', closeModal)
     modal.querySelector('.js-modal-close').removeEventListener('click', closeModal)
     modal = null
-    const response = await fetch("http://localhost:5678/api/works");
+    const response = await fetch(`${apiUrl}/works`);
     const works = await response.json();
     document.querySelector(".gallery").innerHTML = '';
     genererGallerie(works);
@@ -112,7 +113,7 @@ genererGallerieModal(works)
 const functionDelete = async function (work, event) {
     event.stopPropagation()
     let id = work.id
-    const del = await fetch(`http://localhost:5678/api/works/${id}`, {
+    const del = await fetch(`${apiUrl}/works/${id}`, {
         method: 'DELETE',
         headers: {
             "accept": "*/*",
@@ -122,7 +123,7 @@ const functionDelete = async function (work, event) {
 
     if(del.ok) {
         document.querySelector(".miniature").innerHTML = '';
-        const response = await fetch("http://localhost:5678/api/works");
+        const response = await fetch(`${apiUrl}/works`);
         const works = await response.json();
         console.log(works)
         if(works.length===0) {
@@ -164,6 +165,7 @@ const openModal2 = function (e) {
     const buttonFormModal = document.createElement('input')
     buttonFormModal.setAttribute('type', 'file')
     buttonFormModal.className = "button-form-modal"
+    buttonFormModal.setAttribute('accept', '.png, .jpg, .jpeg')
     buttonFormModal.setAttribute('id', 'label-file')
     buttonFormModal.style.display = 'none'
     const labelFile = document.createElement('label')
@@ -229,4 +231,5 @@ arrowBackModal.addEventListener('click', function(e) {
     closeModal2(e)
     openModal(e)
 })
+
 
