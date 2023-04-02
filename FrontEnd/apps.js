@@ -165,7 +165,7 @@ const openModal2 = function (e) {
     const buttonFormModal = document.createElement('input')
     buttonFormModal.setAttribute('type', 'file')
     buttonFormModal.className = "button-form-modal"
-    buttonFormModal.setAttribute('accept', '.png, .jpg, .jpeg')
+    buttonFormModal.setAttribute('accept', '.png, .jpg, .jpeg, .webp')
     buttonFormModal.setAttribute('id', 'label-file')
     buttonFormModal.style.display = 'none'
     const labelFile = document.createElement('label')
