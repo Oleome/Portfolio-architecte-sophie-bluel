@@ -7,14 +7,14 @@ function ajoutListenerIdentifiants() {
         const login = {
             email: event.target.querySelector("[name=email]").value,
             password: event.target.querySelector("[name=password]").value,
-        };
+        }; 
         const chargeUtile = JSON.stringify(login);
         const request = await fetch(`${apiUrl}/users/login`, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: chargeUtile
         }) 
-        
+
         const data = await request.json()
         if (request.ok) {
             // Le formulaire est valide, redirection vers la page admin
