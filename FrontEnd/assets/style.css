@@ -409,6 +409,11 @@ aside i {
 	object-fit: fill;
 }
 
+.preview-img-modal {
+	width: 130px;
+	height: 169px;
+}
+
 .poubelle-button {
 	position: absolute;
 	top: 6px;

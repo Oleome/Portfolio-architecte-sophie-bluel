@@ -163,6 +163,7 @@ const openModal2 = function (e) {
     iconeFormModal.className = "fa-sharp fa-regular fa-image"
     fieldsetModal.appendChild(iconeFormModal)
     const previewImageModal = document.createElement('img')
+    previewImageModal.className = 'preview-img-modal'
     fieldsetModal.appendChild(previewImageModal)
     const buttonFormModal = document.createElement('input')
     buttonFormModal.setAttribute('type', 'file')
@@ -170,8 +171,7 @@ const openModal2 = function (e) {
     buttonFormModal.setAttribute('accept', '.png, .jpg, .jpeg, .webp')
     buttonFormModal.setAttribute('id', 'label-file')
     buttonFormModal.style.display = 'none'
-    buttonFormModal.addEventListener('change', () => 
-        previewImageModal.src = URL.createObjectURL(buttonFormModal.files[0]))
+    buttonFormModal.addEventListener('change', () => previewImageModal.src = URL.createObjectURL(buttonFormModal.files[0]))
     const labelFile = document.createElement('label')
     labelFile.setAttribute('for', 'label-file')
     labelFile.className = 'label-fieldset'
