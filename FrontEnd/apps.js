@@ -260,7 +260,10 @@ function ajoutWork () {
         const chargeUtile = JSON.stringify(envoiPhoto);
         const request = await fetch(`${apiUrl}/works`, {
             method: "POST",
-            headers: {"Content-Type": "multipart/form-data"},
+            headers: {
+                "accept": "*/*",
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
+            },
             body: chargeUtile
         }) 
         const data = await request.json()
