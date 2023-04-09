@@ -1,8 +1,8 @@
-const response = await fetch("http://localhost:5678/api/works");
-const works = await response.json();
-
 import {genererGallerie} from './works.js'
 import {apiUrl} from './api.js';
+
+const response = await fetch(`${apiUrl}/works`);
+const works = await response.json();
 
 let modal = null
 let modal2 = null
@@ -11,8 +11,10 @@ let focusablesElements = []
 let previouslyFocusedElement = null
 const ajouterPhoto = document.querySelector('#ajouter-photo-modal')
 
-const openModal = function (e) {
+const openModal = async function (e) {
     e.preventDefault()
+    const response = await fetch(`${apiUrl}/works`);
+    const works = await response.json();
     modal = document.querySelector('#modal1')
     focusablesElements = Array.from(modal.querySelectorAll(focusableSelector))
     previouslyFocusedElement = document.querySelector(':focus')
@@ -108,8 +110,6 @@ function genererGallerieModal(works) {
     }
 }
 
-genererGallerieModal(works)
-
 const functionDelete = async function (work, event) {
     event.stopPropagation()
     let id = work.id
@@ -125,7 +125,6 @@ const functionDelete = async function (work, event) {
         document.querySelector(".miniature").innerHTML = '';
         const response = await fetch(`${apiUrl}/works`);
         const works = await response.json();
-        console.log(works)
         if(works.length===0) {
             closeModal(event)
         }
