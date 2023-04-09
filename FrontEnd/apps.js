@@ -202,15 +202,15 @@ const openModal2 = function (e) {
     selectCategory.setAttribute('name', 'category')
     const optionSelectObject = document.createElement('option')
     optionSelectObject.innerHTML = 'Objet'
-    optionSelectObject.setAttribute('value', 'Objets')
+    optionSelectObject.setAttribute('value', '1')
     selectCategory.appendChild(optionSelectObject)
     const optionSelectAppartement = document.createElement('option')
     optionSelectAppartement.innerHTML = 'Appartement'
-    optionSelectAppartement.setAttribute('value', 'Appartements')
+    optionSelectAppartement.setAttribute('value', '2')
     selectCategory.appendChild(optionSelectAppartement)
     const optionSelectHorest = document.createElement('option')
     optionSelectHorest.innerHTML = 'Hôtels et restaurants'
-    optionSelectHorest.setAttribute('value', 'Hôtels et restaurant')
+    optionSelectHorest.setAttribute('value', '3')
     selectCategory.appendChild(optionSelectHorest)
     formModal.appendChild(selectCategory)
     const border = document.createElement('hr')
@@ -255,16 +255,16 @@ function ajoutWork () {
         const envoiPhoto = {
             image: e.target.querySelector("[name=upload-image]").files[0],
             title: e.target.querySelector("[name=title]").value,
-            category: e.target.querySelector("[name=category]").value,
+            category: parseInt(e.target.querySelector("[name=category]").value),
         }; 
 
-        const formData = new FormData()
-        formData.append('image', envoiPhoto.image)
-        formData.append('title', envoiPhoto.title)
-        formData.append('category', envoiPhoto.category)
-        formData.forEach((e) => e === undefined ? console.error(`${e} est requis<br>`) : '')
+        const chargeUtile = new FormData()
+        chargeUtile.append('image', envoiPhoto.image)
+        chargeUtile.append('title', envoiPhoto.title)
+        chargeUtile.append('category', envoiPhoto.category)
+        chargeUtile.forEach((e) => e === undefined ? console.error(`${e} est requis<br>`) : '')
 
-        const chargeUtile = JSON.stringify(envoiPhoto);
+        
         const request = await fetch(`${apiUrl}/works`, {
             method: "POST",
             headers: {
