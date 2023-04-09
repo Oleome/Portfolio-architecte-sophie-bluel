@@ -253,14 +253,24 @@ function ajoutWork () {
     formulaireModal.addEventListener('submit', async function(e) {
         e.preventDefault()
         const envoiPhoto = {
-            image: e.target.querySelector("[name=upload-image]").value,
+            image: e.target.querySelector("[name=upload-image]").files[0],
             title: e.target.querySelector("[name=title]").value,
             category: e.target.querySelector("[name=category]").value,
         }; 
+
+        const formData = new FormData()
+        formData.append('image', envoiPhoto.image)
+        formData.append('title', envoiPhoto.title)
+        formData.append('category', envoiPhoto.category)
+        formData.forEach((e) => e === undefined ? console.error(`${e} est requis<br>`) : '')
+
         const chargeUtile = JSON.stringify(envoiPhoto);
         const request = await fetch(`${apiUrl}/works`, {
             method: "POST",
-            headers: {"Content-Type": "multipart/form-data"},
+            headers: {
+                "accept": "*/*",
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
+            },
             body: chargeUtile
         }) 
         const data = await request.json()
