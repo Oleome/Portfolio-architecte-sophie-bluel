@@ -162,16 +162,17 @@ const openModal2 = function (e) {
     iconeFormModal.className = "fa-sharp fa-regular fa-image"
     fieldsetModal.appendChild(iconeFormModal)
     const previewImageModal = document.createElement('img')
+    previewImageModal.style.display = 'none'
     previewImageModal.className = 'preview-img-modal'
     fieldsetModal.appendChild(previewImageModal)
     const buttonFormModal = document.createElement('input')
     buttonFormModal.setAttribute('type', 'file')
+    console.log(buttonFormModal)
     buttonFormModal.setAttribute('name', 'upload-image')
     buttonFormModal.className = "button-form-modal"
     buttonFormModal.setAttribute('accept', '.png, .jpg, .jpeg, .webp')
     buttonFormModal.setAttribute('id', 'label-file')
     buttonFormModal.style.display = 'none'
-    buttonFormModal.addEventListener('change', () => previewImageModal.src = URL.createObjectURL(buttonFormModal.files[0]))
     const labelFile = document.createElement('label')
     labelFile.setAttribute('for', 'label-file')
     labelFile.className = 'label-fieldset'
@@ -181,12 +182,21 @@ const openModal2 = function (e) {
     const spanFormModal = document.createElement('span')
     spanFormModal.innerText = 'jpg, png : 4mo max'
     fieldsetModal.appendChild(spanFormModal)
+    buttonFormModal.addEventListener('change', function() {
+        previewImageModal.src = URL.createObjectURL(buttonFormModal.files[0])
+        previewImageModal.style.display = null
+        buttonFormModal.style.display = "none"
+        iconeFormModal.style.display = "none"
+        labelFile.style.display = "none"
+        spanFormModal.style.display = "none"
+    })
     const labelTitle = document.createElement('label')
     labelTitle.className = 'label-modal'
     labelTitle.setAttribute('for', 'form-title')
     labelTitle.innerHTML = 'Titre'
     formModal.appendChild(labelTitle)
     const inputTitle = document.createElement('input')
+    inputTitle.required = true
     inputTitle.className = "input-title-modal"
     inputTitle.setAttribute('id', 'form-title')
     inputTitle.setAttribute('name', 'title')
@@ -275,7 +285,7 @@ function ajoutWork () {
         }) 
         const data = await request.json()
         if (data.ok) {  
-            console.log(data, envoiPhoto)        
+            console.log()        
         } else {
             console.log(data, envoiPhoto)
         }
