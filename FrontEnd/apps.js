@@ -202,15 +202,15 @@ const openModal2 = function (e) {
     selectCategory.setAttribute('name', 'category')
     const optionSelectObject = document.createElement('option')
     optionSelectObject.innerHTML = 'Objet'
-    optionSelectObject.setAttribute('value', 'o')
+    optionSelectObject.setAttribute('value', 'Objets')
     selectCategory.appendChild(optionSelectObject)
     const optionSelectAppartement = document.createElement('option')
     optionSelectAppartement.innerHTML = 'Appartement'
-    optionSelectAppartement.setAttribute('value', 'a')
+    optionSelectAppartement.setAttribute('value', 'Appartements')
     selectCategory.appendChild(optionSelectAppartement)
     const optionSelectHorest = document.createElement('option')
     optionSelectHorest.innerHTML = 'Hôtels et restaurants'
-    optionSelectHorest.setAttribute('value', 'h')
+    optionSelectHorest.setAttribute('value', 'Hôtels et restaurant')
     selectCategory.appendChild(optionSelectHorest)
     formModal.appendChild(selectCategory)
     const border = document.createElement('hr')
@@ -260,17 +260,14 @@ function ajoutWork () {
         const chargeUtile = JSON.stringify(envoiPhoto);
         const request = await fetch(`${apiUrl}/works`, {
             method: "POST",
-            headers: {
-                "accept": "*/*",
-                "Authorization": `Bearer ${localStorage.getItem("token")}`
-            },
+            headers: {"Content-Type": "multipart/form-data"},
             body: chargeUtile
         }) 
         const data = await request.json()
         if (data.ok) {  
-            console.log(data)        
+            console.log(data, envoiPhoto)        
         } else {
-            console.log(data)
+            console.log(data, envoiPhoto)
         }
     })
 }
