@@ -166,6 +166,7 @@ const openModal2 = function (e) {
     fieldsetModal.appendChild(previewImageModal)
     const buttonFormModal = document.createElement('input')
     buttonFormModal.setAttribute('type', 'file')
+    buttonFormModal.setAttribute('name', 'upload-image')
     buttonFormModal.className = "button-form-modal"
     buttonFormModal.setAttribute('accept', '.png, .jpg, .jpeg, .webp')
     buttonFormModal.setAttribute('id', 'label-file')
@@ -188,6 +189,7 @@ const openModal2 = function (e) {
     const inputTitle = document.createElement('input')
     inputTitle.className = "input-title-modal"
     inputTitle.setAttribute('id', 'form-title')
+    inputTitle.setAttribute('name', 'title')
     formModal.appendChild(inputTitle)
     const labelCategory = document.createElement('label')
     labelCategory.className = 'label-modal'
@@ -197,6 +199,7 @@ const openModal2 = function (e) {
     const selectCategory = document.createElement('select')
     selectCategory.className = "select-category-modal"
     selectCategory.setAttribute('id', 'form-category')
+    selectCategory.setAttribute('name', 'category')
     const optionSelectObject = document.createElement('option')
     optionSelectObject.innerHTML = 'Objet'
     optionSelectObject.setAttribute('value', 'o')
@@ -210,6 +213,14 @@ const openModal2 = function (e) {
     optionSelectHorest.setAttribute('value', 'h')
     selectCategory.appendChild(optionSelectHorest)
     formModal.appendChild(selectCategory)
+    const border = document.createElement('hr')
+    border.className = "border"
+    formModal.appendChild(border)
+    const submitButton = document.createElement('input')
+    submitButton.className = "se-connecter"
+    submitButton.setAttribute('type', 'submit')
+    submitButton.setAttribute('value', 'Valider')
+    formModal.appendChild(submitButton)
 }
 
 const closeModal2 = async function (e) {
@@ -236,3 +247,29 @@ arrowBackModal.addEventListener('click', function(e) {
 })
 
 
+// envoie de nouveau works
+function ajoutWork () {
+    const formulaireModal = document.querySelector('.form-modal')
+    formulaireModal.addEventListener('submit', async function(e) {
+        e.preventDefault()
+        const envoiPhoto = {
+            image: e.target.querySelector("[name=upload-image]").value,
+            title: e.target.querySelector("[name=title]").value,
+            category: e.target.querySelector("[name=category]").value,
+        }; 
+        const chargeUtile = JSON.stringify(envoiPhoto);
+        const request = await fetch(`${apiUrl}/works`, {
+            method: "POST",
+            headers: {"Content-Type": "multipart/form-data"},
+            body: chargeUtile
+        }) 
+        const data = await request.json()
+        if (data.ok) {  
+            console.log(data)        
+        } else {
+            console.log(data)
+        }
+    })
+}
+
+ajoutWork()
