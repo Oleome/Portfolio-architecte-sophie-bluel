@@ -1,15 +1,13 @@
 import {genererGallerie} from './works.js'
 import {apiUrl} from './api.js';
 
-const response = await fetch(`${apiUrl}/works`);
-const works = await response.json();
-
 let modal = null
 let modal2 = null
 const focusableSelector = 'button, a, input'
 let focusablesElements = []
 let previouslyFocusedElement = null
 const ajouterPhoto = document.querySelector('#ajouter-photo-modal')
+const allowedTypes = ["image/png", "image/jpg"];
 
 const openModal = async function (e) {
     e.preventDefault()
@@ -169,7 +167,7 @@ const openModal2 = function (e) {
     buttonFormModal.setAttribute('type', 'file')
     buttonFormModal.setAttribute('name', 'upload-image')
     buttonFormModal.className = "button-form-modal"
-    buttonFormModal.setAttribute('accept', '.png, .jpg, .jpeg, .webp')
+    buttonFormModal.setAttribute('accept', '.png, .jpg')
     buttonFormModal.setAttribute('id', 'label-file')
     buttonFormModal.style.display = 'none'
     const labelFile = document.createElement('label')
@@ -180,14 +178,21 @@ const openModal2 = function (e) {
     fieldsetModal.appendChild(buttonFormModal)
     const spanFormModal = document.createElement('span')
     spanFormModal.innerText = 'jpg, png : 4mo max'
+    spanFormModal.className = "span-form-modal"
     fieldsetModal.appendChild(spanFormModal)
     buttonFormModal.addEventListener('change', function() {
-        previewImageModal.src = URL.createObjectURL(buttonFormModal.files[0])
-        previewImageModal.style.display = null
-        buttonFormModal.style.display = "none"
-        iconeFormModal.style.display = "none"
-        labelFile.style.display = "none"
-        spanFormModal.style.display = "none"
+        if(allowedTypes.includes(buttonFormModal.files[0].type)) {
+            previewImageModal.src = URL.createObjectURL(buttonFormModal.files[0])
+            previewImageModal.style.display = null
+            buttonFormModal.style.display = "none"
+            iconeFormModal.style.display = "none"
+            labelFile.style.display = "none"
+            spanFormModal.style.display = "none"
+        }
+        else {
+            alert("Le fichier doit être de type : jpg ou png !")
+            return
+        }
     })
     const labelTitle = document.createElement('label')
     labelTitle.className = 'label-modal'
@@ -278,6 +283,16 @@ function ajoutWork () {
             return
         }
         
+        if(envoiPhoto.image.size > 4000000) {
+            alert("Le fichier est trop volumineux : 4Mo maximum !")
+            return
+        }
+
+        if (!allowedTypes.includes(envoiPhoto.image.type)) {
+            alert("Le fichier doit être de type : jpg ou png !");
+        return;
+        }
+
         const request = await fetch(`${apiUrl}/works`, {
             method: "POST",
             headers: {
@@ -286,11 +301,16 @@ function ajoutWork () {
             },
             body: chargeUtile
         }) 
-        const data = await request.json()
-        if (data.ok) {  
-                    
+        if (request.ok) {  
+            alert("Votre projet a bien été envoyé !")     
+            document.querySelector(".preview-img-modal").style.display = "none"
+            URL.revokeObjectURL(document.querySelector(".button-form-modal").files[0])
+            document.querySelector(".fa-image").style.display = null
+            document.querySelector(".label-fieldset").style.display = null
+            document.querySelector(".span-form-modal").style.display = null
+            document.getElementById(".input-title-modal").value = ''
         } else {
-            console
+            
         }
     })
 }
