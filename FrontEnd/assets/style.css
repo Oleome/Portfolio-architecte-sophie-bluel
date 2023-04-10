@@ -417,28 +417,29 @@ aside i {
 
 .poubelle-button {
 	position: absolute;
-	top: 6px;
-	right: 5.2px;
+	top: 3.7px;
+	right: 2px;
 	padding: 0;
-	height: 17px;
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
 }
 
-.poubelle-modal {
-	padding: 4px;
+.fa-trash-can {
+	color: #FFF;
+	padding: 5.5px 6px;
 	border-radius: 2px;
 	background-color: black;
+	transform: scale(.7);
 }
 
 .fa-up-down-left-right {
 	position: absolute;
-	top: 3.5px;
+	top: 4.8px;
 	right: 22px;
 	transform: scale(.77);
 	color: #FFF;
-	padding: 4px;
+	padding: 4px 3.5px;
 	border-radius: 2px;
 	background-color: black;
 	cursor: pointer;

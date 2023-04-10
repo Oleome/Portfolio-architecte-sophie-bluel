@@ -94,9 +94,8 @@ function genererGallerieModal(works) {
         captionWorksModal.innerHTML = "éditer";
         const poubelleButton = document.createElement("button");
         poubelleButton.className = "poubelle-button"
-        const poubelleIcone = document.createElement("img");
-        poubelleIcone.className = "poubelle-modal"
-        poubelleIcone.src = "./assets/images/poubelle.png";
+        const poubelleIcone = document.createElement("i");
+        poubelleIcone.className = "fa-solid fa-trash-can"
         const mooveIcone = document.createElement('i')
         mooveIcone.className = "fa-solid fa-up-down-left-right"
         mooveIcone.style.display = "none"
