@@ -181,17 +181,21 @@ const openModal2 = function (e) {
     spanFormModal.className = "span-form-modal"
     fieldsetModal.appendChild(spanFormModal)
     buttonFormModal.addEventListener('change', function() {
-        if(allowedTypes.includes(buttonFormModal.files[0].type)) {
+        if(buttonFormModal.files[0].size > 4000000) {
+            alert("Le fichier est trop volumineux : 4Mo maximum !")
+            return
+        }
+        if(!allowedTypes.includes(buttonFormModal.files[0].type)) {
+            alert("Le fichier doit être de type : jpg ou png !")
+            return
+        }
+        else {
             previewImageModal.src = URL.createObjectURL(buttonFormModal.files[0])
             previewImageModal.style.display = null
             buttonFormModal.style.display = "none"
             iconeFormModal.style.display = "none"
             labelFile.style.display = "none"
             spanFormModal.style.display = "none"
-        }
-        else {
-            alert("Le fichier doit être de type : jpg ou png !")
-            return
         }
     })
     const labelTitle = document.createElement('label')
@@ -279,18 +283,8 @@ function ajoutWork () {
         chargeUtile.append('category', envoiPhoto.category)
 
         if (envoiPhoto.image === undefined) {
-            alert("Veuillez sélectionner un fichier !");
+            alert("Veuillez sélectionner une photo !");
             return
-        }
-        
-        if(envoiPhoto.image.size > 4000000) {
-            alert("Le fichier est trop volumineux : 4Mo maximum !")
-            return
-        }
-
-        if (!allowedTypes.includes(envoiPhoto.image.type)) {
-            alert("Le fichier doit être de type : jpg ou png !");
-        return;
         }
 
         const request = await fetch(`${apiUrl}/works`, {
@@ -308,7 +302,7 @@ function ajoutWork () {
             document.querySelector(".fa-image").style.display = null
             document.querySelector(".label-fieldset").style.display = null
             document.querySelector(".span-form-modal").style.display = null
-            document.getElementById(".input-title-modal").value = ''
+            openModal2(e)
         } else {
             
         }
