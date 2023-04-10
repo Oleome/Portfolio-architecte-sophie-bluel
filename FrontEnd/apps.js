@@ -97,11 +97,21 @@ function genererGallerieModal(works) {
         const poubelleIcone = document.createElement("img");
         poubelleIcone.className = "poubelle-modal"
         poubelleIcone.src = "./assets/images/poubelle.png";
+        const mooveIcone = document.createElement('i')
+        mooveIcone.className = "fa-solid fa-up-down-left-right"
+        mooveIcone.style.display = "none"
+        imageWorksModal.addEventListener('mouseenter', function() {
+            mooveIcone.style.display = null
+        })
+        imageWorksModal.addEventListener('mouseleave', function() {
+            mooveIcone.style.display = "none"
+        })
         galleryMiniature.appendChild(figWorksModal);
         figWorksModal.appendChild(imageWorksModal);
         figWorksModal.appendChild(captionWorksModal);
         poubelleButton.appendChild(poubelleIcone);
-        figWorksModal.appendChild(poubelleButton)
+        figWorksModal.appendChild(poubelleButton);
+        figWorksModal.appendChild(mooveIcone)
         poubelleButton.addEventListener("click", function(event) {
             functionDelete(project, event)
         })

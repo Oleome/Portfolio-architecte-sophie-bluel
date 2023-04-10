@@ -432,7 +432,17 @@ aside i {
 	background-color: black;
 }
 
-
+.fa-up-down-left-right {
+	position: absolute;
+	top: 3.5px;
+	right: 22px;
+	transform: scale(.77);
+	color: #FFF;
+	padding: 4px;
+	border-radius: 2px;
+	background-color: black;
+	cursor: pointer;
+}
 
 @keyframes fadeIn {
 	
