@@ -298,13 +298,13 @@ function ajoutWork () {
         if (request.ok) {  
             alert("Votre projet a bien été envoyé !")     
             document.querySelector(".preview-img-modal").style.display = "none"
-            URL.revokeObjectURL(document.querySelector(".button-form-modal").files[0])
             document.querySelector(".fa-image").style.display = null
             document.querySelector(".label-fieldset").style.display = null
             document.querySelector(".span-form-modal").style.display = null
             openModal2(e)
         } else {
-            
+            alert("Votre projet n'a pas pu être envoyé")
+            return
         }
     })
 }
