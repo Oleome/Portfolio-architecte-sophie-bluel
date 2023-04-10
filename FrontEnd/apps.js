@@ -261,6 +261,7 @@ function ajoutWork () {
     const formulaireModal = document.querySelector('.form-modal')
     formulaireModal.addEventListener('submit', async function(e) {
         e.preventDefault()
+          
         const envoiPhoto = {
             image: e.target.querySelector("[name=upload-image]").files[0],
             title: e.target.querySelector("[name=title]").value,
@@ -271,6 +272,11 @@ function ajoutWork () {
         chargeUtile.append('image', envoiPhoto.image)
         chargeUtile.append('title', envoiPhoto.title)
         chargeUtile.append('category', envoiPhoto.category)
+
+        if (envoiPhoto.image === undefined) {
+            alert("Veuillez sélectionner un fichier !");
+            return
+        }
         
         const request = await fetch(`${apiUrl}/works`, {
             method: "POST",
