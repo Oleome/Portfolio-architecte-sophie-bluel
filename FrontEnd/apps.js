@@ -3,7 +3,7 @@ import {apiUrl} from './api.js';
 
 let modal = null
 let modal2 = null
-const focusableSelector = 'button, a, input'
+const focusableSelector = 'button, a'
 let focusablesElements = []
 let previouslyFocusedElement = null
 const ajouterPhoto = document.querySelector('#ajouter-photo-modal')
