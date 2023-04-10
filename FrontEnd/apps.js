@@ -167,7 +167,6 @@ const openModal2 = function (e) {
     fieldsetModal.appendChild(previewImageModal)
     const buttonFormModal = document.createElement('input')
     buttonFormModal.setAttribute('type', 'file')
-    console.log(buttonFormModal)
     buttonFormModal.setAttribute('name', 'upload-image')
     buttonFormModal.className = "button-form-modal"
     buttonFormModal.setAttribute('accept', '.png, .jpg, .jpeg, .webp')
@@ -272,8 +271,6 @@ function ajoutWork () {
         chargeUtile.append('image', envoiPhoto.image)
         chargeUtile.append('title', envoiPhoto.title)
         chargeUtile.append('category', envoiPhoto.category)
-        chargeUtile.forEach((e) => e === undefined ? console.error(`${e} est requis<br>`) : '')
-
         
         const request = await fetch(`${apiUrl}/works`, {
             method: "POST",
@@ -285,9 +282,9 @@ function ajoutWork () {
         }) 
         const data = await request.json()
         if (data.ok) {  
-            console.log()        
+                    
         } else {
-            console.log(data, envoiPhoto)
+            console
         }
     })
 }
