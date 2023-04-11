@@ -1,4 +1,4 @@
-if(localStorage.getItem('token')){
+if(sessionStorage.getItem('token')){
     /**
      * création bouton logout
      */
@@ -6,7 +6,7 @@ if(localStorage.getItem('token')){
     log.innerText = 'logout'
     log.addEventListener('click', function(e) {
         e.preventDefault()
-        localStorage.removeItem('token')
+        sessionStorage.removeItem('token')
         window.location.href = "./index.html";
     })
 

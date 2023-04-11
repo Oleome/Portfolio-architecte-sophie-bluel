@@ -124,7 +124,7 @@ const functionDelete = async function (work, event) {
         method: 'DELETE',
         headers: {
             "accept": "*/*",
-            "Authorization": `Bearer ${localStorage.getItem("token")}`,
+            "Authorization": `Bearer ${sessionStorage.getItem("token")}`,
         }
     })
 
@@ -300,7 +300,7 @@ function ajoutWork () {
             method: "POST",
             headers: {
                 "accept": "*/*",
-                "Authorization": `Bearer ${localStorage.getItem("token")}`
+                "Authorization": `Bearer ${sessionStorage.getItem("token")}`
             },
             body: chargeUtile
         }) 
