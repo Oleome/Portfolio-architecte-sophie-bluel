@@ -311,6 +311,9 @@ function ajoutWork () {
             document.querySelector(".label-fieldset").style.display = null
             document.querySelector(".span-form-modal").style.display = null
             openModal2(e)
+            const response = await fetch(`${apiUrl}/works`);
+            const works = await response.json();
+            genererGallerie(works)
         } else {
             alert("Votre projet n'a pas pu être envoyé")
             return
