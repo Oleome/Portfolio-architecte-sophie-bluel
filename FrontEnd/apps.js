@@ -65,7 +65,7 @@ const focusInModal = function (e) {
     focusablesElements[index].focus()
 }
 
-document.querySelectorAll('.js-modal').forEach( a => {
+document.querySelectorAll('.pen-modifier').forEach( a => {
     a.addEventListener('click', openModal)
 })
 
