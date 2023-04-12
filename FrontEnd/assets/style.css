@@ -309,7 +309,7 @@ footer nav ul {
 }
 
 *:focus {
-	box-shadow: 0 0 5px blue;
+	box-shadow: 0 0 4px rgb(110, 110, 243);
 }
 
 .projet-modifier {
