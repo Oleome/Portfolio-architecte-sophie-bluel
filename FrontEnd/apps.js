@@ -92,6 +92,7 @@ function genererGallerieModal(works) {
         imageWorksModal.src = project.imageUrl;
         const captionWorksModal = document.createElement("figcaption");
         captionWorksModal.innerHTML = "éditer";
+        captionWorksModal.className = "edit"
         const poubelleButton = document.createElement("button");
         poubelleButton.className = "poubelle-button"
         const poubelleIcone = document.createElement("i");
@@ -227,6 +228,10 @@ const openModal2 = function (e) {
     selectCategory.className = "select-category-modal"
     selectCategory.setAttribute('id', 'form-category')
     selectCategory.setAttribute('name', 'category')
+    selectCategory.required = true
+    const optionSelectEmpty = document.createElement('option')
+    optionSelectEmpty.innerHTML = ''
+    selectCategory.appendChild(optionSelectEmpty)
     const optionSelectObject = document.createElement('option')
     optionSelectObject.innerHTML = 'Objet'
     optionSelectObject.setAttribute('value', '1')
@@ -248,6 +253,21 @@ const openModal2 = function (e) {
     submitButton.setAttribute('type', 'submit')
     submitButton.setAttribute('value', 'Valider')
     formModal.appendChild(submitButton)
+    inputTitle.addEventListener('input', function() {
+        if(inputTitle.value != '' && selectCategory.value != '' && buttonFormModal.files.length > 0) {
+            submitButton.style.backgroundColor = '#1D6154'
+        }
+    })
+    selectCategory.addEventListener('change', function() {
+        if(inputTitle.value != '' && selectCategory.value != '' && buttonFormModal.files.length > 0) {
+            submitButton.style.backgroundColor = '#1D6154'
+        }
+    })
+    buttonFormModal.addEventListener('change', function() {
+        if(inputTitle.value != '' && selectCategory.value != '' && buttonFormModal.files.length > 0) {
+            submitButton.style.backgroundColor = '#1D6154'
+        }
+    })
 }
 
 const closeModal2 = async function (e) {
@@ -291,7 +311,7 @@ function ajoutWork () {
         chargeUtile.append('title', envoiPhoto.title)
         chargeUtile.append('category', envoiPhoto.category)
 
-        if (envoiPhoto.image === undefined) {
+        if(envoiPhoto.image === undefined) {
             alert("Veuillez sélectionner une photo !");
             return
         }
