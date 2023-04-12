@@ -92,6 +92,7 @@ function genererGallerieModal(works) {
         imageWorksModal.src = project.imageUrl;
         const captionWorksModal = document.createElement("figcaption");
         captionWorksModal.innerHTML = "éditer";
+        captionWorksModal.className = "edit"
         const poubelleButton = document.createElement("button");
         poubelleButton.className = "poubelle-button"
         const poubelleIcone = document.createElement("i");
@@ -227,6 +228,10 @@ const openModal2 = function (e) {
     selectCategory.className = "select-category-modal"
     selectCategory.setAttribute('id', 'form-category')
     selectCategory.setAttribute('name', 'category')
+    selectCategory.required = true
+    const optionSelectEmpty = document.createElement('option')
+    optionSelectEmpty.innerHTML = ''
+    selectCategory.appendChild(optionSelectEmpty)
     const optionSelectObject = document.createElement('option')
     optionSelectObject.innerHTML = 'Objet'
     optionSelectObject.setAttribute('value', '1')

@@ -398,6 +398,10 @@ aside i {
 	margin-bottom: 11px;
 }
 
+.edit:hover {
+	cursor: pointer;
+}
+
 .border {
 	height: 1px;
 	width: 420px;
