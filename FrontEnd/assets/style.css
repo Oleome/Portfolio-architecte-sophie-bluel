@@ -466,6 +466,11 @@ aside i {
 	align-items: center;
 }
 
+.bandeau-admin .fa-pen-to-square {
+	color: #FFF;
+	margin-right: 12px;
+}
+
 .bandeau-admin span {
 	font-size: 1rem;
 	color: #FFF;
