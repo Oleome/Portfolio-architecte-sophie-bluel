@@ -253,6 +253,21 @@ const openModal2 = function (e) {
     submitButton.setAttribute('type', 'submit')
     submitButton.setAttribute('value', 'Valider')
     formModal.appendChild(submitButton)
+    inputTitle.addEventListener('input', function() {
+        if(inputTitle.value != '' && selectCategory.value != '' && buttonFormModal.files.length > 0) {
+            submitButton.style.backgroundColor = '#1D6154'
+        }
+    })
+    selectCategory.addEventListener('change', function() {
+        if(inputTitle.value != '' && selectCategory.value != '' && buttonFormModal.files.length > 0) {
+            submitButton.style.backgroundColor = '#1D6154'
+        }
+    })
+    buttonFormModal.addEventListener('change', function() {
+        if(inputTitle.value != '' && selectCategory.value != '' && buttonFormModal.files.length > 0) {
+            submitButton.style.backgroundColor = '#1D6154'
+        }
+    })
 }
 
 const closeModal2 = async function (e) {
@@ -296,7 +311,7 @@ function ajoutWork () {
         chargeUtile.append('title', envoiPhoto.title)
         chargeUtile.append('category', envoiPhoto.category)
 
-        if (envoiPhoto.image === undefined) {
+        if(envoiPhoto.image === undefined) {
             alert("Veuillez sélectionner une photo !");
             return
         }
