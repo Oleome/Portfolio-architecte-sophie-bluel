@@ -78,9 +78,7 @@ window.addEventListener('keydown', function(e) {
     }
 })
 
-/**
- * gallery dans modal
- */
+//Gallerie dans modal
 
 function genererGallerieModal(works) {
     for(let i=0; i<works.length; i++){

@@ -2,6 +2,8 @@ const response = await fetch(`${apiUrl}/works`);
 const works = await response.json();
 import {apiUrl} from './api.js';
 
+// Affichage des projets
+
 export const genererGallerie = function (works) {
     for(let i=0; i<works.length; i++){
 
@@ -20,6 +22,8 @@ export const genererGallerie = function (works) {
 }
 
 genererGallerie(works);
+
+//génération des boutons de filtres
 
 const boutonTous = document.querySelector(".tous");
 
